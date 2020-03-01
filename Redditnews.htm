@@ -1,0 +1,186 @@
+
+<head>
+    <title>Tyuzu</title>
+    <meta charset='UTF-8'/>
+    <meta content='width=device-width, initial-scale=1' name='viewport'/>
+    <!--link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet"-->
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Asap&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+       body::-webkit-scrollbar {
+       width: 12px;
+       }
+       body::-webkit-scrollbar-thumb {
+       background-color: #555;
+       }
+       p {
+        /*font-family: 'Josefin sans',sans-serif ;*/
+        font-family: 'PT sans',sans-serif ;
+       color: #555;
+       line-height: 26px;
+       font-size: 18px;
+       margin-top: 8px;
+       }
+       body {
+/*        font-family: 'Playfair Display',sans-serif ;*/
+font-family: 'Noto sans JP',-apple-system,Helvetica Neue,Helvetica,Ubuntu,Roboto,Noto,Segoe UI,Arial,sans-serif;
+       font-weight: 400;
+       line-height: 1.6;
+       color: #111;
+       }
+       input::placeholder {
+       font-size: 20px;
+       font-weight: bold;
+       font-family: breezesans;
+       }
+       * {
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+       list-style-type: none;
+       vertical-align: baseline;
+       text-decoration: none;
+       }
+       h1, h2, h3, h4, h5 {
+       clear: both;
+       font-weight: normal;
+       line-height: 1.2;
+       }
+       .site-descriptionnbt {
+       color: #bbbbbb;
+       font-size: 18px;
+       margin: 0.5em 0 0.25em;
+       }          
+       .site-titlenbt {
+       font-size: 2.441em;
+       font-weight: bold;
+       margin: 0;
+       }
+       .site-titlenbt a, .site-titlenbt a:visited {
+       color: #2cb503;
+       font-family: breezesans;
+       font-weight: bold;
+       text-decoration: none;
+       }
+    </style>
+    <script type="text/javascript">
+        //<![CDATA[
+        var numfeed = 8;
+        var startfeed = 0;
+        var urlblog = "https://koreanthroughkpop.blogspot.com";
+        var charac = 160;
+        var urlprevious, urlnext;
+        function myfeed(e,t){for(var n=e.split("<"),r=0;r<n.length;r++)-1!=n[r].indexOf(">")&&(n[r]=n[r].substring(n[r].indexOf(">")+1,n[r].length));return n=n.join(""),n=n.substring(0,t-1)}function showrecentpostsae(e){var t,n,r,a,i,s="";urlprevious="",urlnext="";for(var l=0;l<e.feed.link.length;l++)"previous"==e.feed.link[l].rel&&(urlprevious=e.feed.link[l].href),"next"==e.feed.link[l].rel&&(urlnext=e.feed.link[l].href);for(var d=0;d<numfeed&&d!=e.feed.entry.length;d++){t=e.feed.entry[d],n=t.title.$t;for(var l=0;l<t.link.length;l++)if("alternate"==t.link[l].rel){r=t.link[l].href;break}i="content"in t?t.content.$t:"summary"in t?t.summary.$t:"",a="media$thumbnail"in t?t.media$thumbnail.url:"https://3.bp.blogspot.com/-BHuXHny1kOk/VXrkSyxKCjI/AAAAAAAACas/pZLJAEUDtds/s1600/no-image.png",s+="<div class='recentpostel'>",s+="<div class='textcon'>",s+="<h2><a href='"+r+"'>"+n+"</a></h2>",s+="<p>"+myfeed(i,charac)+"...</p></div>",s+="</div></a>"}document.getElementById("recentpostsae").innerHTML=s,s="",s+=urlprevious?"<a href='javascript:navigasifeed(-1);' class='previous'>Previous</a>":"<span class='noactived previous'>Previous</span>",s+=urlnext?"<a href='javascript:navigasifeed(1);' class='next'>Next</a>":"<span class='noactived next'>Next</span>",s+="<a href='javascript:navigasifeed(0);' class='home'>Home</a>",document.getElementById("recentpostnavfeed").innerHTML=s}function navigasifeed(e){var t,n;-1==e?(t=urlprevious.indexOf("?"),n=urlprevious.substring(t)):1==e?(t=urlnext.indexOf("?"),n=urlnext.substring(t)):n="?start-index=1&max-results="+numfeed+"&orderby=published&alt=json-in-script",n+="&callback=showrecentpostsae",incluirscript(n)}function incluirscript(e){1==startfeed&&removerscript(),document.getElementById("recentpostsae").innerHTML="<div id='recentpostload'></div>",document.getElementById("recentpostnavfeed").innerHTML="";var t=urlblog+"/feeds/posts/default"+e,n=document.createElement("script");n.setAttribute("type","text/javascript"),n.setAttribute("src",t),n.setAttribute("id","mylabel"),document.getElementsByTagName("head")[0].appendChild(n),startfeed=1}function removerscript(){var e=document.getElementById("mylabel"),t=e.parentNode;t.removeChild(e)}onload=function(){navigasifeed(0)};
+        //]]>
+     </script>
+  </head>
+ <body>
+       <div class="feedcon">
+          <section class="poptags">
+          </section>
+      <div class="container">
+             <div id="recentpostsae"></div>
+             <div id="recentpostnavfeed"></div>
+          </div>
+       </div>
+    <style>
+       header {
+       position: relative;
+       top: 0;
+       left: 0;
+       z-index: 10;
+       display: flex;
+       justify-content: space-around;
+       align-items: center;
+       padding: 0.5rem 0;
+       background: #F3F3F3;
+       }
+       .feedcon {
+       max-width: 800px;
+       margin: 0 auto;
+       }
+    </style>
+    <style>
+.recentpostel {
+    min-height: 45px;
+    margin-top: 8px;
+    transition: transform .5s;
+    padding: 20px 6px;
+    background: #fff;
+}
+.news {
+    font-size: 18px;
+    font-weight: 600;
+    color: #444;
+    font-family: 'Josefin sans', Courier, monospace;
+}
+.imigi {
+    padding: 2%;
+    }
+       a {
+       vertical-align: top;
+       color: #2e312e;
+       margin-top: 4px;
+       }
+       a:hover, a:focus {
+       color : #ff3c00;
+       }
+       .recentpostel h2 {
+       color: #001ba0;
+       font-weight: normal;
+       line-height: 24px;
+       }
+       .recentpostel:hover {
+       background-color: #fefefe;
+       }
+       #recentpostload {
+       color: #888;
+       font-family: Tahoma;
+       font-size: 100px;
+       letter-spacing: -10px;
+       text-align: center;
+       text-shadow: -5px 0 1px #444;
+       background: #fff url(https://2.bp.blogspot.com/-60aISBQLRY0/VFBMqzLfzGI/AAAAAAAABgM/GInmVTvEzkc/s1600/loader.gif) no-repeat 50% 50%;
+       height: 470px;
+       }
+       #recentpostnavfeed {
+       border-top: 1px solid #ddd;
+       color: #bbb;
+       text-align: center;
+       margin-top: 20px;
+       }
+       #recentpostnavfeed:hover {
+       background-color: #fefefe;
+       }
+       #recentpostnavfeed a {
+       color: #141414!important;
+       display: block;
+       padding: 5px 10px;
+       }
+       #recentpostnavfeed span {
+       padding: 5px 10px;
+       }
+       #recentpostnavfeed .next {
+       float: right;
+       font-weight: bold;
+       font-size: 20px;
+       }
+       #recentpostnavfeed .previous {
+       float: left;
+       font-weight: bold;
+       font-size: 20px;
+       }
+       #recentpostnavfeed .home {
+       text-align: center;
+       font-weight: bold;
+       font-size: 20px;
+       }
+       #recentpostnavfeed a:hover,
+       #recentpostnavfeed span.noactived {
+       color: transparant!important;
+       }
+    </style>
+ </body>
