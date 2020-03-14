@@ -1,0 +1,323 @@
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" id="viewport" name="viewport">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="noimageindex, noarchive" name="robots">
+    <meta content="yes" name="mobile-web-app-capable">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Ubuntu, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            background: #ffffff;
+            font-size: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            outline: none;
+            box-sizing: border-box;
+            text-decoration: none;
+            vertical-align: baseline;
+            list-style-type: none;
+            border: 0;
+            outline: 0;
+        }
+
+    </style>
+    </head>
+    <style>
+        
+        @media screen and (max-width: 600px) {        }
+
+        @media screen and (max-width: 1199px) and (min-width: 601px) {        }
+
+        @media screen and (min-width: 1200px) {
+            body::-webkit-scrollbar {
+                width: 12px;
+            }
+
+            body::-webkit-scrollbar-thumb {
+                background-color: #555;
+            }
+        }
+    </style>
+ <style>
+    
+
+        .d3 {
+            display: flex;
+            background: #ffffff;
+            border: 2px solid #797979;
+            max-width: 650px;
+            align-items: center;
+            border-radius: 6px;
+        }
+
+        .search-field {
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            border: 0px;
+            width: 100%;
+            outline: none;
+            padding: 0rem 0.3rem;
+            background: transparent;
+            height: 3rem;
+            color: #000;
+            font-size: 1rem;
+        }
+
+        .search-btn {
+    background-color: yellow;
+    border: 0 3px 3px 0;
+    outline: none;
+    display: flex;
+    align-items: center;
+}
+.search-btn {
+    height: 3rem;
+    padding: 0rem 0.6rem;
+}
+.mbtn {
+    padding: 10px;
+    background: yellow;
+    color: black;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.srchicon {
+    stroke: #5f5f5f;
+    fill: none;
+    stroke-width: 2;
+    width: 2.2rem;
+    height: 2.2rem;
+}
+
+.logoogle {
+    border-radius: 5px;
+    padding: 0px;
+    stroke: #4f4f4f;
+}
+.logoogle, .logo {
+    height: 3rem;
+    width: 3rem;
+}
+    
+        .centry {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem auto;
+}
+</style>
+<div class="flexy">
+        <div class="centry">
+<div class="musicbox d3">
+    <input type="text" class="search-field" id="videoFile" title="video file input field" value="file:///F:/kmusic/LoonaTheAlarm.mp3">
+    <button class="search-btn " id="loadVideo" title="Load video button">
+        <svg xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24" class="srchicon ">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+    </button>
+</div>
+<video id="Video1"  class="musicbox" height="264" width="352" title="video element" src="file:///F:/kmusic/LoonaTheAlarm.mp3">
+    HTML5 Video is required for this example
+</video>
+<div id="buttonbar" class="mbtnbox">
+    <div id="status">
+        C: <span id="curTime" title="Current time">0</span> /
+        L: <span id="vLen">0</span>
+    </div>
+</div>
+<div id="buttonbar" class="mbtnbox">
+    <button class="mbtn" id="rew" title="Rewind button">&lt;&lt;</button>
+    <button class="mbtn" id="slower" title="Slower playback button">Ss</button>
+    <button class="mbtn" id="play" title="Play button">P</button>
+    <button class="mbtn" id="faster" title="Faster playback button">Ff</button>
+    <button class="mbtn" id="fwd" title="Forward button">&gt;&gt;</button>
+</div>
+    <div id="buttonbar"  class="mbtnbox">
+    <button class="mbtn" id="restart" title="Restart button">S</button>
+    <button class="mbtn" id="mute" title="Mute button"><img alt="Not Muted" src="vol2.png"></button>
+    <button class="mbtn" id="normal" title="Reset playback rate button">R</button>
+</div>
+</div>
+</div>
+    <style>
+.flexy {
+    display: flex;;
+}
+.musicbox{
+    margin: 0.4rem;
+    display: flex;
+    border: 2px solid yellow;
+    max-width: 354px;
+}
+.mbtnbox{
+    margin: 0.4rem;
+    display: flex;
+    border: 2px solid yellow;
+    max-width: 354px;
+justify-content: space-between;
+}
+
+</style>
+
+
+<script>
+    var video = document.getElementById("Video1");
+    var vLength;
+    var pgFlag = ""; // used for progress tracking
+    if (video.canPlayType) { // tests that we have HTML5 video support
+
+        //  video button helper functions
+        //  play video
+        function vidplay(evt) {
+            if (video.src == "") { // inital source load
+                getVideo();
+            }
+            if (video.paused) { // play the file, and display pause symbol
+                video.play();
+            } else { // pause the file, and display play symbol
+                video.pause();
+            }
+        }
+
+        //  load video file from input field
+        function getVideo() {
+            var fileURL = document.getElementById("videoFile").value; // get input field
+            if (fileURL != "") {
+                video.src = fileURL;
+                video.load(); // if HTML source element is used
+                document.getElementById("play").click(); // start play
+            } else {
+                errMessage("Enter a valid video URL"); // fail silently
+            }
+        }
+
+
+        //  button helper functions
+        //  skip forward, backward, or restart
+        function setTime(tValue) {
+            //  if no video is loaded, this throws an exception
+            try {
+                if (tValue == 0) {
+                    video.currentTime = tValue;
+                } else {
+                    video.currentTime += tValue;
+                }
+
+            } catch (err) {
+                // errMessage(err) // show exception
+                errMessage("Video content might not be loaded");
+            }
+        }
+
+        // change volume based on incoming value
+        function setVol(value) {
+            var vol = video.volume;
+            vol += value;
+            //  test for range 0 - 1 to avoid exceptions
+            if (vol >= 0 && vol <= 1) {
+                // if valid value, use it
+                video.volume = vol;
+            } else {
+                // otherwise substitute a 0 or 1
+                video.volume = (vol < 0) ? 0 : 1;
+            }
+        }
+        //  button events
+        //  Play
+        document.getElementById("play").addEventListener("click", vidplay, false);
+        //  Restart
+        document.getElementById("restart").addEventListener("click", function() {
+            setTime(0);
+        }, false);
+        //  Skip backward 10 seconds
+        document.getElementById("rew").addEventListener("click", function() {
+            setTime(-10);
+        }, false);
+        //  Skip forward 10 seconds
+        document.getElementById("fwd").addEventListener("click", function() {
+            setTime(10);
+        }, false);
+        //  set src == latest video file URL
+        document.getElementById("loadVideo").addEventListener("click", getVideo, false);
+
+        // playback speed buttons
+        document.getElementById("slower").addEventListener("click", function() {
+            video.playbackRate -= .25;
+        }, false);
+        document.getElementById("faster").addEventListener("click", function() {
+            video.playbackRate += .25;
+        }, false);
+        document.getElementById("normal").addEventListener("click", function() {
+            video.playbackRate = 1;
+        }, false);
+        document.getElementById("mute").addEventListener("click", function(evt) {
+            if (video.muted) {
+                video.muted = false;
+            } else {
+                video.muted = true;
+            }
+        }, false);
+
+        //  any video error will fail with message
+        video.addEventListener("error", function(err) {
+            errMessage(err);
+        }, true);
+        // content has loaded, display buttons and set up events
+        video.addEventListener("canplay", function() {
+            document.getElementById("buttonbar").style.display = "flex";
+        }, false);
+
+        //  display video duration when available
+        video.addEventListener("loadedmetadata", function() {
+            vLength = video.duration.toFixed(1);
+            document.getElementById("vLen").textContent = vLength; // global variable
+        }, false);
+
+        //  display the current and remaining times
+        video.addEventListener("timeupdate", function() {
+            //  Current time
+            var vTime = video.currentTime;
+            document.getElementById("curTime").textContent = vTime.toFixed(1);
+        }, false);
+        //  paused and playing events to control buttons
+        video.addEventListener("pause", function() {
+            document.getElementById("play").textContent = ">";
+        }, false);
+
+        video.addEventListener("playing", function() {
+            document.getElementById("play").textContent = "||";
+        }, false);
+
+        video.addEventListener("volumechange", function() {
+            if (video.muted) {
+                // if muted, show mute image
+                document.getElementById("mute").innerHTML = "<img alt='Muted' src='vol1.png' />";
+            } else {
+                // if not muted, show not muted image
+                document.getElementById("mute").innerHTML = "<img alt='Not Muted' src='vol2.png' />";
+            }
+        }, false);
+        //  Download and playback status events.
+
+    } else {
+        errMessage("HTML5 Video is required for this example");
+        // end of runtime
+    }
+    //  display an error message
+    function errMessage(msg) {
+        // displays an error message for 5 seconds then clears it
+        document.getElementById("errorMsg").textContent = msg;
+        setTimeout("document.getElementById('errorMsg').textContent=''", 5000);
+    }
+
+</script>
+
