@@ -1,0 +1,80 @@
+<form class="formcon " id="search-form" name="search-form" onsubmit="return search()">
+            
+    <div class="d3 " style="width:100%; ">
+       <input class="form-control search-field " type="search" id="query" style="width:100%;" placeholder="#tags, people, shopping">
+       <button class="search-btn " type="submit" id="search-btn" name="search-btn" value="">
+          <svg xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24" class="srchicon ">
+             <circle cx="11" cy="11" r="8"></circle>
+             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+       </button>
+    </div>
+    
+ </form>
+ <style>
+.formcon {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0.4rem 0.1rem;
+    align-items: center;
+    height: 4rem;
+}
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    vertical-align: baseline;
+    list-style-type: none;
+    border: 0;
+    outline: 0;
+}
+.d3 {
+    display: flex;
+    background: #efefef;
+    border-bottom: 2px solid #686868;
+    margin: 0rem 0.2rem;
+    max-width: 650px;
+    align-items: center;
+}
+.search-field {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 0px;
+    outline: none;
+    background: transparent;
+    color: #000;
+    font-size: 1.1rem;
+}
+.search-btn {
+    background-color: #ffffff00;
+    border: none;
+    outline: none;
+    border-radius: 0 6px 6px 0;
+    display: flex;
+    align-items: center;
+}
+.srchicon {
+    stroke: #5f5f5f;
+    fill: none;
+    stroke-width: 2;
+}
+
+.search-field {
+    height: 3rem;
+    padding: 0rem 1.2rem;
+}
+.search-btn {
+    height: 3rem;
+    padding: 0rem 0.6rem;
+}
+.srchicon {
+    width: 2rem;
+    height: 2rem;
+}
+
+
+ </style>

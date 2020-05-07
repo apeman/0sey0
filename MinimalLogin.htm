@@ -1,0 +1,80 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel='stylesheet' type='text/css'>
+</head>
+ <style>
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    vertical-align: baseline;
+    list-style-type: none;
+    border: 0;
+    outline: 0;
+}
+body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, hr, dl, dd, ol, ul, figure { margin: 0; padding: 0; }
+
+/** Basic styling */
+body { font-family: "Merriweather", Helvetica, Arial, sans-serif; color: rgb(0, 0, 0); background-color: #ffffff; -webkit-text-size-adjust: 100%; -webkit-font-feature-settings: "kern" 1; -moz-font-feature-settings: "kern" 1; -o-font-feature-settings: "kern" 1; font-feature-settings: "kern" 1; font-kerning: normal; }
+.flexy {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
+}
+
+.formcon {
+    width: 100%;
+    padding: 0.4rem 0.1rem;
+    height: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.d3 {
+/*    background: #efefef;*/
+    border-bottom: 3px solid #000000;
+    margin: 1rem 0.2rem;
+    max-width: 350px;
+    align-items: center;
+}
+.search-field {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 0px;
+    outline: none;
+    background: transparent;
+    color: #000;
+    font-size: 1.1rem;
+}
+.search-field {
+    height: 3rem;
+    padding: 0rem;
+}
+input {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.sitename {
+    width:100%;max-width: 350px;text-align: center;margin-bottom: 3%; letter-spacing: 3px;font-size: 1.2rem;;
+}
+ </style>
+<div class="flexy">
+<form class="formcon " id="search-form" name="search-form" onsubmit="return search()">
+    <div class="sitename">
+        <h1>WIKIPEDIA</h1>
+    </div>            
+    <div class="d3 " style="width:100%; ">
+        <input class="form-control search-field " type="text" style="width:100%;" placeholder="username">
+    </div>
+    <div class="d3 " style="width:100%; ">
+            <input class="form-control search-field " type="password"  style="width:100%;" placeholder="password">
+        </div>
+    
+ </form>
+</div>

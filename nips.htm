@@ -1,0 +1,548 @@
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" id="viewport" name="viewport">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="noimageindex, noarchive" name="robots">
+    <link href="https://fonts.googleapis.com/css?family=Bellota|Nanum+Gothic" rel="stylesheet">
+    <meta content="yes" name="mobile-web-app-capable">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        body {
+            font-family: "Bellota", -apple-system, BlinkMacSystemFont, 'Segoe UI', Ubuntu, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            background: #ffffff;
+            font-size: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            outline: none;
+            box-sizing: border-box;
+            text-decoration: none;
+            vertical-align: baseline;
+            list-style-type: none;
+            border: 0;
+            outline: 0;
+        }
+
+    </style>
+    </head>
+    <style>
+        
+        @media screen and (max-width: 600px) {}
+
+        @media screen and (max-width: 1199px) and (min-width: 601px) {}
+
+        @media screen and (min-width: 1200px) {
+            body::-webkit-scrollbar {
+                width: 12px;
+            }
+
+            body::-webkit-scrollbar-thumb {
+                background-color: #555;
+            }
+
+        }
+    </style>
+<div class="tabcon">
+    <ul class="nuts">
+        
+        <li rel="vtab1" class="active">
+            <svg class="logoogle clrful" viewBox="0 0 24 24" width="100%" height="100%" role="img" stroke="#000000">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+        </li>
+
+        <li rel="vtab2" class="">
+            <svg class="logoogle clrful" viewBox="0 0 24 24" width="100%" height="100%" role="img" stroke="#000000">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+        </li>
+        <li rel="vtab3" class="">
+            <svg class="logoogle clrful" viewBox="0 0 24 24" width="100%" height="100%" role="img" stroke="#000000">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+        </li>
+        <li rel="vtab4" class="">
+            <svg class="logoogle clrful" viewBox="0 0 24 24" width="100%" height="100%" role="img" stroke="#000000">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+        </li>
+    </ul>
+</div>
+<style>
+    .nuts {
+    margin: 0.0rem 0rem 0.0rem 0.0rem;
+    border-right: 1px solid #f0f0f0;
+    align-items: center;
+    justify-content: flex-start;
+    width:   100%;
+    padding: 0rem 0rem;
+    z-index: 1;
+    list-style: none;
+    position: fixed;
+    display: flex;
+    bottom: 0;
+    background: #ffffff;
+}
+.tabcon {
+    display: flex;
+}
+.nuts li.active {
+    background: #f0f0f0f0;
+}
+
+.nuts li {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.6rem 0.4rem;
+    border-bottom: 0px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+.clrful {
+    stroke-width: 1.4;
+    border-radius: 5px;
+    fill: none;
+    stroke: #4f4f4f;
+    padding: 3px;
+    box-shadow: none;
+    display: block;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: .2s ease;
+}
+</style>
+<form class="formcon " id="search-form" name="search-form" onsubmit="return search()">
+    <a href="#" class="logo">
+        <svg class="logoogle" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img" fill="none" stroke-width="3">
+            <defs>
+                <linearGradient id="gradient6" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="25%" stop-color="#FFC107"></stop>
+                    <stop offset="75%" stop-color="#FF9800"></stop>
+                </linearGradient>
+            </defs>
+            <path d="M18.36 6.64a9 9 0 1 1-12.73 0" stroke="url(#gradient6)"></path>
+            <line x1="12" y1="2" x2="12" y2="12" stroke="#FF9800"></line>
+        </svg>
+    </a>
+    <div class="d3 " style="width:100%; ">
+        <input class="form-control search-field " type="search" id="query" style="width:100%;" placeholder="#tags, people, shopping">
+        <button class="search-btn " type="submit" id="search-btn" name="search-btn" value="">
+            <svg xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24" class="srchicon ">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+        </button>
+    </div>
+</form>
+<style>
+    
+    .formcon {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0.4rem;
+            align-items: center;
+            background: #fff;
+        }
+
+        .d3 {
+            display: flex;
+            background: #ffffff;
+            border: 2px solid #797979;
+            max-width: 650px;
+            align-items: center;
+            border-radius: 6px;
+        }
+
+        .search-field {
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            border: 0px;
+            outline: none;
+            padding: 0rem 0.6rem;
+            background: transparent;
+    height: 3.2rem;
+            color: #000;
+            font-size: 1.1rem;
+        }
+
+        .search-btn {
+    background-color: #ffffff00;
+    border: none;
+    outline: none;
+    border-radius: 0 6px 6px 0;
+    display: flex;
+    align-items: center;
+}
+.search-btn {
+    height: 3.2rem;
+    padding: 0rem 0.6rem;
+}
+.mbtn {
+    padding: 10px;
+    background: yellow;
+    color: black;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.srchicon {
+    stroke: #5f5f5f;
+    fill: none;
+    stroke-width: 2;
+    width: 2.4rem;
+    height: 2.4rem;
+}
+
+.logoogle {
+    border-radius: 5px;
+    padding: 0px;
+    stroke: #4f4f4f;
+}
+.logoogle, .igtv, .logo {
+    height: 3rem;
+    width: 3rem;
+}
+</style>
+<div class="jisoo">
+
+    <div class="lips">
+        <div class="finger on">Leopard</div>
+    </div>
+    <div class="lips">
+        <div class="finger">Panther</div>
+    </div>
+    <div class="lips">
+        <div class="finger">Tiger</div>
+    </div>
+    <div class="lips">
+        <div class="finger">Lion</div>
+    </div>
+    <div class="lips">
+        <div class="finger">Cheetah</div>
+    </div>
+    <div class="lips">
+        <div class="finger">Jaguar</div>
+    </div>
+    <div class="lips">
+        <div class="finger">Puma</div>
+    </div>
+</div>
+<style>
+    
+    .jisoo {
+    flex-wrap: nowrap;
+    display: flex;
+    background: #ffffff;
+    overflow-x: visible;
+    overflow-y: hidden;
+    border: 1px solid #eee;
+}
+            .lips {
+                overflow: hidden;
+                text-align: center;
+                flex-basis: 100px;
+                flex-shrink: 0;
+                max-width: 250px;
+            }
+
+            .on {
+                border-bottom: 3px solid #000000;
+            }
+
+            .finger {
+                font-family: "Nanum Gothic", sans-serif;
+                font-size: 16px;
+                padding: 8px 0;
+                letter-spacing: 0.4;
+                font-weight: 700;
+            }
+            
+            .jisoo::-webkit-scrollbar {
+                width: 12px;
+            }
+
+            .jisoo::-webkit-scrollbar-thumb {
+                background-color: #555;
+            }
+            .centry {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem auto;
+}
+</style>
+<div class="flexy">
+<div class="kiwi">
+
+    <h1 class="magical" id="introduction">Leopard</h1>
+    
+    <p>Compared to other wild cats, the leopard has relatively short legs and a long body with a large skull. Its fur is marked with rosettes. It is similar in appearance to the jaguar, but has a smaller, lighter physique, and its rosettes are generally smaller, more densely packed and without central spots. Leopard fossils were also found in Japan.</p>
+    <h2 class="magical" id="Etymology">Etymology</h2>
+    
+    <p>The word 'panther' is derived from the Latin word 'panther' and the ancient Greek πάνθηρ 'pánthēr'.[13][14] The phonetically similar sounding Sanskrit word पाण्डर 'pând-ara' means 'pale yellow, whitish, white'.[15] The specific name pardus is derived from the Greek πάρδαλος 'pardalos' meaning 'spotted'.[16]</p>
+    <img class="pic" src="https://c402277.ssl.cf1.rackcdn.com/photos/907/images/hero_small/sumatran-tiger-hero_92514619.jpg?1345581518">
+    <p> Leopards tend to take smaller prey, usually less than 75 kg (165 lb), where tigers are present.[8] In areas where leopard and tiger are sympatric, coexistence is reportedly not the general rule, with leopards being few where tigers are numerous.[120] The mean leopard density decreased significantly (from 9.76 to 2.07 animals per 100 km2) when the mean density of tigers increased (from 3.31 animals/100km2 to 5.81 animals/100km2) from 2004–5 to 2007–8 in Rajaji National Park in India following the relocation of pastoralists out of the park. There, the two species have high dietary overlap, and an increase in the tiger population resulted in a sharp decrease in the leopard population and a shift in the leopard diet to small prey (from 9% to 36%) and domestic prey (from 6.8% to 31.8%).</p>
+</div>
+
+<div class="centry">
+<div class="musicbox">
+    <input type="text" id="videoFile" style="width: 300px;padding: 10px;" title="video file input field" value="file:///F:/kmusic/LoonaTheAlarm.mp3">
+    <button class="mbtn" id="loadVideo" title="Load video button">Load</button>
+</div>
+<video id="Video1"  class="musicbox" height="264" width="352" title="video element" src="file:///F:/kmusic/LoonaTheAlarm.mp3">
+    HTML5 Video is required for this example
+</video>
+<div id="buttonbar"  class="mbtnbox">
+    <button class="mbtn" id="rew" title="Rewind button">&lt;&lt;</button>
+    <button class="mbtn" id="slower" title="Slower playback button">Ss</button>
+    <button class="mbtn" id="play" title="Play button">P</button>
+    <button class="mbtn" id="faster" title="Faster playback button">Ff</button>
+    <button class="mbtn" id="fwd" title="Forward button">&gt;&gt;</button>
+</div>
+    <div id="buttonbar"  class="mbtnbox">
+    <button class="mbtn" id="restart" title="Restart button">S</button>
+    <button class="mbtn" id="mute" title="Mute button"><img alt="Not Muted" src="vol2.png"></button>
+    <button class="mbtn" id="normal" title="Reset playback rate button">R</button>
+</div>
+<div id="buttonbar"  class="mbtnbox">
+<div id="status">
+        C: <span id="curTime" title="Current time">23.3</span> /
+        L: <span id="vLen">23.3</span>
+    </div>
+    <br>
+
+</div>
+</div>
+</div>
+<style>
+    .kiwi {
+        width: 100%;
+        max-width: 800px;
+        padding: 0 1rem;
+        background: white;
+        /* border-top: 1px solid #f0f0f0; */
+    }
+    .kiwi h1 {
+        text-transform: capitalize;
+        font-family: "Roboto", sans-serif;
+        letter-spacing: 2px;
+        font-size: 30px;
+        font-weight: 300;
+        margin-top: 20px;
+    }
+    
+    .magical {
+        background-image: linear-gradient(120deg, #000000 0%, #ffffff 100%);
+        background-repeat: no-repeat;
+        background-size: 100% 0.2em;
+        background-position: 0% 88%;
+        padding-bottom: 4px;
+        display: inline-block;
+        transition: background-size 0.25s ease-in;
+    }
+    .magical::after {
+        width: 0px;
+        height: 0px;
+        background: black;
+        display: block;
+        content: '';
+        margin-top: 8px;
+    }
+    .kiwi p {
+        color: #616161;
+        font-size: 1.08em;
+        word-spacing: 6px;
+    }
+    .pic {
+        float: right;
+        padding: 0.5rem;
+        width: 260px;
+    }
+    
+    </style>
+    <style>
+.flexy {
+    display: flex;;
+}
+.musicbox{
+    margin: 1rem;
+    display: flex;
+    border: 2px solid yellow;
+    max-width: 354px;
+}
+.mbtnbox{
+    margin: 1rem;
+    display: flex;
+    border: 2px solid yellow;
+    max-width: 354px;
+justify-content: space-between;
+}
+
+</style>
+
+
+<script>
+    var video = document.getElementById("Video1");
+    var vLength;
+    var pgFlag = ""; // used for progress tracking
+    if (video.canPlayType) { // tests that we have HTML5 video support
+
+        //  video button helper functions
+        //  play video
+        function vidplay(evt) {
+            if (video.src == "") { // inital source load
+                getVideo();
+            }
+            if (video.paused) { // play the file, and display pause symbol
+                video.play();
+            } else { // pause the file, and display play symbol
+                video.pause();
+            }
+        }
+
+        //  load video file from input field
+        function getVideo() {
+            var fileURL = document.getElementById("videoFile").value; // get input field
+            if (fileURL != "") {
+                video.src = fileURL;
+                video.load(); // if HTML source element is used
+                document.getElementById("play").click(); // start play
+            } else {
+                errMessage("Enter a valid video URL"); // fail silently
+            }
+        }
+
+
+        //  button helper functions
+        //  skip forward, backward, or restart
+        function setTime(tValue) {
+            //  if no video is loaded, this throws an exception
+            try {
+                if (tValue == 0) {
+                    video.currentTime = tValue;
+                } else {
+                    video.currentTime += tValue;
+                }
+
+            } catch (err) {
+                // errMessage(err) // show exception
+                errMessage("Video content might not be loaded");
+            }
+        }
+
+        // change volume based on incoming value
+        function setVol(value) {
+            var vol = video.volume;
+            vol += value;
+            //  test for range 0 - 1 to avoid exceptions
+            if (vol >= 0 && vol <= 1) {
+                // if valid value, use it
+                video.volume = vol;
+            } else {
+                // otherwise substitute a 0 or 1
+                video.volume = (vol < 0) ? 0 : 1;
+            }
+        }
+        //  button events
+        //  Play
+        document.getElementById("play").addEventListener("click", vidplay, false);
+        //  Restart
+        document.getElementById("restart").addEventListener("click", function() {
+            setTime(0);
+        }, false);
+        //  Skip backward 10 seconds
+        document.getElementById("rew").addEventListener("click", function() {
+            setTime(-10);
+        }, false);
+        //  Skip forward 10 seconds
+        document.getElementById("fwd").addEventListener("click", function() {
+            setTime(10);
+        }, false);
+        //  set src == latest video file URL
+        document.getElementById("loadVideo").addEventListener("click", getVideo, false);
+
+        // playback speed buttons
+        document.getElementById("slower").addEventListener("click", function() {
+            video.playbackRate -= .25;
+        }, false);
+        document.getElementById("faster").addEventListener("click", function() {
+            video.playbackRate += .25;
+        }, false);
+        document.getElementById("normal").addEventListener("click", function() {
+            video.playbackRate = 1;
+        }, false);
+        document.getElementById("mute").addEventListener("click", function(evt) {
+            if (video.muted) {
+                video.muted = false;
+            } else {
+                video.muted = true;
+            }
+        }, false);
+
+        //  any video error will fail with message
+        video.addEventListener("error", function(err) {
+            errMessage(err);
+        }, true);
+        // content has loaded, display buttons and set up events
+        video.addEventListener("canplay", function() {
+            document.getElementById("buttonbar").style.display = "flex";
+        }, false);
+
+        //  display video duration when available
+        video.addEventListener("loadedmetadata", function() {
+            vLength = video.duration.toFixed(1);
+            document.getElementById("vLen").textContent = vLength; // global variable
+        }, false);
+
+        //  display the current and remaining times
+        video.addEventListener("timeupdate", function() {
+            //  Current time
+            var vTime = video.currentTime;
+            document.getElementById("curTime").textContent = vTime.toFixed(1);
+        }, false);
+        //  paused and playing events to control buttons
+        video.addEventListener("pause", function() {
+            document.getElementById("play").textContent = ">";
+        }, false);
+
+        video.addEventListener("playing", function() {
+            document.getElementById("play").textContent = "||";
+        }, false);
+
+        video.addEventListener("volumechange", function() {
+            if (video.muted) {
+                // if muted, show mute image
+                document.getElementById("mute").innerHTML = "<img alt='Muted' src='vol1.png' />";
+            } else {
+                // if not muted, show not muted image
+                document.getElementById("mute").innerHTML = "<img alt='Not Muted' src='vol2.png' />";
+            }
+        }, false);
+        //  Download and playback status events.
+
+    } else {
+        errMessage("HTML5 Video is required for this example");
+        // end of runtime
+    }
+    //  display an error message
+    function errMessage(msg) {
+        // displays an error message for 5 seconds then clears it
+        document.getElementById("errorMsg").textContent = msg;
+        setTimeout("document.getElementById('errorMsg').textContent=''", 5000);
+    }
+
+</script>
+

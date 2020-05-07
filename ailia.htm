@@ -1,0 +1,97 @@
+<style>
+    @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #3d3d3d;
+}
+
+#app {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: #dadada;
+}
+
+.magic-card {
+  border-radius: .5rem;
+  background: #dadada;
+  box-shadow: 10px 10px 20px #aaa, -10px -10px 20px #fbfbfb;
+  padding: 0.5rem 1rem;
+  min-width: 340px;
+}
+.magic-card h1 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 2px;
+  margin: 0.5rem 0;
+}
+.magic-card .input-form {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.magic-card .input-form label {
+  font-size: 0.875rem;
+  color: #333;
+  padding: .125rem .25rem;
+}
+.magic-card .input-form input,
+.magic-card .input-form button,
+.magic-card .input-form button:active {
+  border: none;
+  border-radius: .125rem;
+  padding: 0.5rem .5rem;
+  background: #dadada;
+  box-shadow: inset 3px 3px 6px #aaa,  inset -3px -3px 6px #fbfbfb;
+  outline: none;
+}
+.magic-card .input-form input:hover,
+.magic-card .input-form input:focus,
+.magic-card .input-form button {
+  background: #dadada;
+  box-shadow: 3px 3px 6px #aaa,  -3px -3px 6px #fbfbfb;
+}
+.magic-card .input-form button {
+  margin-top: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+.magic-card .input-form button:hover {
+  color: #76deac;
+  text-shadow: 2px 2px 8px #0f5e38;
+}
+.magic-card p {
+  font-size: 0.75rem;
+  text-align: center;
+  margin-top: .5rem;
+}
+</style>
+<div id="app">
+    <div class="magic-card">
+      <h1>Welcome</h1>
+      <div class="input-form">
+        <label for="username">Username:</label>
+        <input type="text" id="username" placeholder="username">
+      </div>
+      <div class="input-form">
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="********">
+      </div>
+      <div class="input-form">
+        <button>Sign In</button>
+      </div>
+      <p>Forget password? Click <a href="#">here</a>!</p>
+      <p><a href="#">Create account</a></p>
+    </div>
+  </div>

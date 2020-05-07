@@ -1,0 +1,900 @@
+
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" id="viewport">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="Description" content="Computer science simplified so that noobs can understand it.">
+    <meta name="robots" content="noimageindex, noarchive">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <style>
+        body {
+            font-family: "Playfair Display", -apple-system, BlinkMacSystemFont, 'Segoe UI', Ubuntu, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            background: #40d446;
+            font-size: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            outline: none;
+            box-sizing: border-box;
+            text-decoration: none;
+            vertical-align: baseline;
+            list-style-type: none;
+            border: 0;
+            outline: 0;
+        }
+
+    </style>
+    <style>
+        
+        @media screen and (max-width: 600px) {}
+
+        @media screen and (max-width: 1199px) and (min-width: 601px) {}
+
+        @media screen and (min-width: 1200px) {
+            body::-webkit-scrollbar {
+                width: 12px;
+            }
+
+            body::-webkit-scrollbar-thumb {
+                background-color: #555;
+            }
+
+        }
+    </style>
+    </head>
+        <script async src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <style>
+    
+            .jisoo {
+            flex-wrap: nowrap;
+            display: flex;
+            background: #ffffff;
+            overflow-x: visible;
+            overflow-y: hidden;
+                border-bottom: 1px solid #eee;
+        }
+                    .lips {
+                        overflow: hidden;
+                        text-align: center;
+                        flex-basis: 100px;
+                        flex-shrink: 0;
+                        max-width: 250px;
+                    }
+        
+                    .on {
+                        border-bottom: 2px solid;
+                    }
+        
+                    .finger {
+                        font-size: 16px;
+                        padding: 8px 0;
+                        letter-spacing: 0.4;
+                        font-weight: 700;
+                    }
+                    
+                    .jisoo::-webkit-scrollbar {
+                        background-color: #ddd;
+                        width: 0px;
+                        height: 10px;
+                    }
+        
+                    .jisoo::-webkit-scrollbar-thumb {
+                        background-color: #555;
+                        border-radius: 2px;
+                    }
+                    main {
+            display: flex;
+            flex-direction: column;
+            margin: 0rem auto;
+    width: 100%;
+    max-width: 700px;
+    padding: 0 0.5rem;
+    background: white;
+    height: 100%;
+}
+        </style>
+        <main>
+            <form class="formcon " id="search-form" name="search-form" onsubmit="return search()">
+                <div class="logoicon">
+                    <svg class="logoogle clrful" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img" stroke="#000000">
+                        <line x1="4" y1="21" x2="4" y2="14" stroke="#4285F4"></line>
+                        <line x1="4" y1="10" x2="4" y2="3" stroke="#4285F4"></line>
+                        <line x1="12" y1="21" x2="12" y2="12" stroke="#4285F4"></line>
+                        <line x1="12" y1="8" x2="12" y2="3" stroke="#4285F4"></line>
+                        <line x1="20" y1="21" x2="20" y2="16" stroke="#4285F4"></line>
+                        <line x1="20" y1="12" x2="20" y2="3" stroke="#4285F4"></line>
+                        <line x1="1" y1="14" x2="7" y2="14" stroke="#34A853"></line>
+                        <line x1="9" y1="8" x2="15" y2="8" stroke="#34A853"></line>
+                        <line x1="17" y1="16" x2="23" y2="16" stroke="#34A853"></line>
+                     </svg>
+                </div>
+                <div class="d3 " style="width:100%; ">
+                    <input class="form-control search-field " type="search" id="query" style="width:100%;" placeholder="#tags, people, shopping">
+                    <button class="search-btn " type="submit" id="search-btn" name="search-btn" value="">
+                        <svg xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24" class="srchicon ">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </button>
+                </div>
+            </form>
+            <div class="jisoo">
+                <div class="lips">
+                    <div class="finger on">Writings</div>
+                </div>
+                <div class="lips">
+                    <div class="finger">Code</div>
+                </div>
+                <div class="lips">
+                    <div class="finger">Forensics</div>
+                </div>
+                <div class="lips">
+                    <div class="finger">Projects</div>
+                </div>
+                <div class="lips">
+                    <div class="finger">About</div>
+                </div>
+            </div>
+    <section class="channel">
+        <span class="bg_img" style="background-image:url(https://unsplash.it/1200/500?random);"></span>
+        <div class="profile_area">
+            <span class="thumb"></span>
+        </div>
+    </section>
+    <section class="statistics">
+        <p><strong>624</strong> Posts</p>
+        <p></p>
+        <p><strong>101</strong> Following</p>
+    </section>
+            </main>
+        
+    <style>
+
+        p {
+          font-size: 13px;
+        }
+    .vidhead {
+      font-family: "Ubuntu",Segoe UI,sans-serif;
+    }
+    
+        .thecard {
+          display: block;
+          background-color: #fff;
+          border-radius: 4px;
+          transition: 400ms ease;
+        }
+    
+        .card-img {
+          height: 225px;
+        }
+    
+        .card-img img {
+          width:100%;
+          border-radius: 4px 4px 0px 0px;
+        }
+    
+        .card-caption {
+          position: relative;
+          background: #ffffff;
+          padding: 5px 15px 5px 15px;
+          border-radius: 0px 0px 4px 4px;
+        }
+    
+        .card-outmore {
+          padding: 10px 25px 10px 25px;
+          border-radius: 0px 0px 4px 4px;
+          border-top: 1px solid #e0e0e0;
+          background: #efefef;
+          color: #222;
+          display: inline-table;
+          width: 100%;
+          box-sizing: border-box;
+          transition: 400ms ease;
+        }
+        .card-outmore h5 {
+          float: left;
+        }
+        .card-outmore i {
+          float: right;
+        }
+    
+        span.date {
+          font-size: 12px;
+        }
+        .read-more-state {
+          display: none;
+        }
+    
+        .read-more-target {
+          opacity: 0;
+          max-height: 0;
+          font-size: 0;
+          transition: .25s ease;
+        }
+    
+        .read-more-state:checked ~ .read-more-wrap .read-more-target {
+          opacity: 1;
+          font-size: inherit;
+          max-height: 999em;
+        }
+    
+        .read-more-state ~ .read-more-trigger:before {
+          content: 'Show more';
+        }
+    
+        .read-more-state:checked ~ .read-more-trigger:before {
+          content: 'Show less';
+        }
+    
+        .read-more-trigger {
+          cursor: pointer;
+          display: inline-block;
+          padding: 0 .5em;
+          color: #666;
+          font-size: .9em;
+          line-height: 2;
+          border: 1px solid #ddd;
+          border-radius: .25em;
+        }
+    
+        .quarea {
+    
+          max-width: 1000px;
+          margin: 0 auto;
+        }
+        .common {
+          width: 100%;
+          min-height: 50px;
+          font-size: 15px;
+          overflow: hidden;
+          padding: 15px;
+          outline: none;
+        }
+        .action {
+          height: 41px;
+          background: #7f72fa;
+          margin: -4px auto;
+          outline: none;
+        }
+        .action input[type="submit"] {
+          width: 100%;
+          padding: 12px 5px;
+          border: 0px;
+          background: #7f72fa;
+          color: #fff;
+          float: right;
+          /* margin: 5px; */
+          cursor: pointer;
+          transition: all 0.5s ease;
+          -webkit-transition: all 0.5s ease;
+        }
+        *,
+        *::before,
+        *::after {
+          margin: 0;
+          padding: 0;
+          border: none;
+          box-sizing: border-box;
+        }
+        :root {
+          --colorBtnPrincipal: #D2D2D2;
+          --rangeBg: #333;
+        }
+        /*              VIDEO CONTAINER               */
+        .video-container {
+          position: relative;
+          max-width: 1000px;
+          margin: 0 auto;
+          height: vmax;
+        }
+        .video {
+          max-width: 100%;
+          max-height: 40vmax;
+        }
+    
+        .video::-webkit-media-controls, .video::-webkit-media-controls-enclosure {
+          display:none !important;
+        }
+        /*              VIDEO CONTROLS               */
+        .video:-moz-full-screen + .video-controls {
+          bottom: 0;
+        }
+        .video:-webkit-full-screen + .video-controls {
+          bottom: 0;
+        }
+    
+        .video-controls {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          position: absolute;
+          bottom: 0px;
+          left: 0;
+          z-index: 2147483647;
+          padding: 10px;
+          width: 100%;
+          background-color: #ffffff;
+        -ms-transform: translate(50px, 100px); /* IE 9 */
+        -webkit-transform: translate(50px, 100px); /* Safari */
+        transform: translate(50px, 100px);
+        display: none;
+        transition: .4s ease-out;
+        transition-delay: 2s;
+        }
+        .video-container:hover .video-controls {
+        display: flex;
+        -ms-transform: translate(0px, 0px); /* IE 9 */
+        -webkit-transform: translate(0px, 0px); /* Safari */
+        transform: translate(0px, 0px);
+        transition: .4s ease-out;
+        transition-delay: 2s;
+        }
+    
+        .play-and-pause-video {
+        padding: 15px;
+        width: 15px;
+        border: 0px;
+        border-radius: 0px;
+    }
+    
+        /*              VIDEO PROGRESS               */
+        .progress-video-container {
+          display: flex;
+          align-items: center;
+          position: relative;
+          width: 65%;
+        }
+        .time-video {
+          font-family: sans-serif;
+          font-size: 16px;
+          font-weight: bold;
+          color: var(--colorBtnPrincipal);
+        }
+        .progress-time { order: -1;}
+    
+        .progress-video, .slide-volume-video {
+          background-image: linear-gradient(to left, #0575E6, #00F260);
+          background-repeat: no-repeat;
+          background-size: 0% 100%;
+        }
+        .progress-video, .slide-volume-video {
+          width: 100%;
+          height: 10px;
+          margin: 0 10px;
+          -webkit-appearance: none;
+          border-radius: 4px;
+          outline: none;
+          background-color: #cccccc;
+        }
+    
+        *,
+        *::before,
+        *::after {
+          margin: 0;
+          padding: 0;
+          border: none;
+          box-sizing: border-box;
+        }
+        :root {
+          --colorBtnPrincipal: #999999;
+          --rangeBg: #333;
+        }
+        .fa {
+          padding: 8px 12px;
+        }
+    
+        /*            ESTILOS COMUNS              */
+        .progress-video::-moz-range-thumb,
+        .slide-volume-video::-moz-range-thumb {
+          width: 15px;
+          height: 15px;
+          background-color: var(--colorBtnPrincipal);
+          border: none;
+        }
+        .slide-volume-video::-webkit-slider-thumb, .progress-video::-webkit-slider-thumb {
+          width: 15px;
+          height: 15px;
+          -webkit-appearance: none;
+          border-radius: 50%;
+          background-color: var(--colorBtnPrincipal);
+        }
+        .progress-video::-moz-range-track, .slide-volume-video::-moz-range-track {
+          height: 0;
+          background-color: var(--rangeBg);
+          border-radius: 4px;
+        }
+    
+    
+    
+        /*             MEDIAS QUERIES*            */
+        @media (max-width: 480px){
+          .video-controls {
+            justify-content: space-around;
+            padding: 10px 0px;
+          }
+          .time-video { font-size: 12px; }
+          .play-and-pause-video {
+            width: 15px;
+            padding: 0;
+            background: none;
+            box-shadow: none;
+          }
+          .progress-video { margin: 0 3px;}
+          .slide-volume-video { width: 45px; }
+        }
+        @media (min-width: 1200){
+          .video:-webkit-full-screen + .video-controls > .progress-video-container {
+            width: 100%;
+          }
+        }
+    
+      </style>
+      
+      <div style="width: 100%;margin-top: 10px;">
+        <div class="video-container">
+          <video src="file:///F:/CRUISE/cicada/Arin/RingedBonyAnkole.webm" class="video" width="1000" loop autoplay></video>
+          <div class="video-controls video-controls-visibility--hidden">
+            <button class="control-item play-and-pause-video fa fa-play" title="Play or Pause"></button>
+            <div class="progress-video-container">
+              <input type="range" class="control-item progress-video" min="0.0" value="0.00" step="any" max="8478.793" style="background-size: 22.3499% 100%;">
+              <span class="progress-time time-video">31:34</span>
+              <span class="duration-time time-video">02:141:18</span>
+            </div>
+            <button class="control-item fullscreen-video fa fa-expand"></button>
+          </div>
+        </div></div>
+      <script>
+      const $VIDEO = document.querySelector('.video'),
+      $VIDEO_CONTROLS = document.querySelector('.video-controls'),
+      $BUTTON_PAUSE_AND_PLAY = document.querySelector('.play-and-pause-video'),
+      $PROGRESS_VIDEO = document.querySelector('.progress-video'),
+      $CHANGE_VOLUME = document.querySelector('.slide-volume-video'),
+      $FULLSCREEN = document.querySelector('.fullscreen-video');
+    
+      function durationVideo() {
+        let durationMidia = $VIDEO.duration,
+        $durationTime = document.querySelector('.duration-time');
+        $durationTime.innerHTML = transformVideoDuration(durationMidia);
+        animationVolume($VIDEO.volume);
+      };
+    
+      function progressVideo() {
+        var autoProgress = $VIDEO.currentTime,
+        $progressBar = document.querySelector('.progress-video'),
+        $progressTime = document.querySelector('.progress-time');
+        $progressBar.value = autoProgress.toFixed(0);
+        $progressBar.setAttribute('max', $VIDEO.duration);
+    
+        $progressTime.innerHTML = transformVideoDuration(autoProgress);
+        animationProgress();
+      };
+    
+      function ChangeProgressVideo() {
+        $changeProgress = document.querySelector('.progress-video');
+        $VIDEO.currentTime = $changeProgress.value;
+      };
+    
+      function animationProgress() {
+        let percentageProgress = (($PROGRESS_VIDEO.value - $PROGRESS_VIDEO.min) * 100) / ($PROGRESS_VIDEO.max - $PROGRESS_VIDEO.min);
+        $PROGRESS_VIDEO.style.backgroundSize = `${percentageProgress}% 100%`;
+        console.log('progress: ' + percentageProgress)
+      };
+    
+      function animationVolume(volume) {
+        let animationVolume = volume;
+        animationVolume = volume * 100;
+        if (animationVolume === 100) {
+          animationVolume = 100;
+        }
+        $CHANGE_VOLUME.style.backgroundSize = `${animationVolume}% 100%`;
+      };
+    
+      function transformVideoDuration(timeVideo) {
+        let hours, mins, secds, time;
+        hours = Math.floor(timeVideo / 3600);
+        mins = Math.floor(timeVideo / 60);
+        secds = Math.floor(timeVideo - mins * 60)
+        return time = formartTimeVideo(hours, mins, secds);
+      };
+    
+      function formartTimeVideo(hours, mins, secds) {
+        let time;
+        if (hours < 1) {
+          hours = '';
+        };
+        if (hours < 10 && hours != '') {
+          hours = '0' + hours + ':';
+        };
+        if (mins < 10) {
+          mins = '0' + mins;
+        }
+        if (secds < 10) {
+          secds = '0' + secds;
+        }
+        return time = `${hours}${mins}:${secds}`;
+      };
+    
+      function playAndPause() {
+        let $playButton = document.querySelector('.play-and-pause-video');
+        if ($VIDEO.paused == true) {
+          playVideo();
+          $playButton.classList.remove('fa-play');
+          $playButton.classList.add('fa-pause');
+        } else {
+          pauseVideo();
+          $playButton.classList.remove('fa-pause');
+          $playButton.classList.add('fa-play');
+        }
+      };
+    
+      function pauseVideo(){
+        $VIDEO.pause();
+      };
+    
+      function playVideo(){
+        $VIDEO.play();
+      };
+    
+      function volume() {
+        let $changeVolume = document.querySelector('.slide-volume-video').value;
+        $VIDEO.volume = $changeVolume;
+        let $buttonVolume = document.querySelector('.volume-video');
+        if ($VIDEO.volume === 0) {
+          $buttonVolume.classList.remove('fa-volume-up');
+          $buttonVolume.classList.add('fa-volume-off');
+        } else {
+          $buttonVolume.classList.remove('fa-volume-off');
+          $buttonVolume.classList.add('fa-volume-up');
+        };
+        animationVolume($changeVolume);
+      };
+    
+      function endVideo(){
+        let $playButtonEnd = document.querySelector('.play-and-pause-video');
+        $VIDEO_CONTROLS.classList.remove('video-controls-visibility--hidden');
+        $playButtonEnd.classList.remove('fa-pause');
+        $playButtonEnd.classList.add('fa-play');
+    
+      }
+    
+      function videoFullScreen() {
+        if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {
+          if ($VIDEO.requestFullscreen) {
+            $VIDEO.requestFullscreen();
+          } else if ($VIDEO.msRequestFullscreen) {
+            $VIDEO.msRequestFullscreen();
+          } else if ($VIDEO.mozRequestFullScreen) {
+            $VIDEO.mozRequestFullScreen();
+          } else if ($VIDEO.webkitRequestFullscreen) {
+            $VIDEO.webkitRequestFullscreen();
+          }
+          $FULLSCREEN.classList.remove('fa-expand');
+          $FULLSCREEN.classList.add('fa-compress');
+        } else {
+          if (document.exitFullscreen) {
+            document.exitFullscreen();
+          } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+          } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+          } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+          }
+          $FULLSCREEN.classList.remove('fa-compress');
+          $FULLSCREEN.classList.add('fa-expand');
+        };
+      };
+    
+      function controlVisibility(){
+        setTimeout(function(){
+          $VIDEO_CONTROLS.classList.remove('video-controls-visibility--visible');
+          $VIDEO_CONTROLS.classList.add('video-controls-visibility--hidden');
+        }, 10000)
+        console.log('play')
+      };
+    
+    
+      //               EVENTS PLAYER
+    
+      // EVENTS VIDEO
+      $VIDEO.addEventListener('loadeddata', durationVideo);
+    
+      $VIDEO.addEventListener('timeupdate', progressVideo);
+    
+      $VIDEO.addEventListener('play', controlVisibility);
+    
+      $VIDEO.addEventListener('click', playAndPause);
+    
+      $VIDEO.addEventListener('ended', endVideo);
+    
+      // EVENTS VIDEO CONTROLS
+    
+      $PROGRESS_VIDEO.addEventListener('change', ChangeProgressVideo)
+    
+      $BUTTON_PAUSE_AND_PLAY.addEventListener('click', playAndPause);
+    
+      $CHANGE_VOLUME.addEventListener('change', volume);
+    
+      $FULLSCREEN.addEventListener('click', videoFullScreen);
+    
+    </script>
+    <style>
+
+
+        .channel {
+            width: 100%;
+        /*        max-width: 680px;
+            margin: 0 auto;*/
+        }
+        
+        .bg_img {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 10rem;
+        overflow: hidden;
+        background: no-repeat 50% 0;
+        background-size: cover;
+        }
+        
+        .bg_img:after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: solid 1px rgba(0, 0, 0, 0.05);
+            content: '';
+        }
+        
+        .profile_area {
+        position: relative;
+        border-top: 0;
+        margin-top: -4rem;
+        }
+        .thumb {
+            background-image: url(https://unsplash.it/400/400?random);
+            background-size: cover;
+            border: 1px solid rgba(0, 0, 0, 0.07);
+        }
+        .thumb {
+        position: absolute;
+        top: 0.5rem;
+        left: 0;
+        right: 0;
+        width: 7rem;
+        height: 7rem;
+        margin: 0 auto;
+        border-radius: 50%;
+        }
+        
+        .thumb img {
+            border-radius: 50%;
+        }
+        
+        .imgful {
+            width: 100%;
+        }
+        
+        img {
+            border: 0;
+            vertical-align: top;
+        }
+        
+        .thumb:after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50%;
+            border: 1px solid rgba(0, 0, 0, 0.07);
+            content: '';
+        }
+        
+        .statistics {
+        justify-content: space-around;
+        display: flex;
+        flex-direction: row;
+        padding: 0.5rem 0;
+        align-items: center;
+        margin-top: 4rem;
+        color: #000;
+        /* border-bottom: 1px solid rgba(0, 0, 0, 0.07); */
+        }
+        
+        .statistics p {
+            display: flex;
+            flex-direction: column;
+            flex-basis: 33.33%;
+            align-items: center;
+            line-height: 1.6rem;
+        }
+        
+        .statistics strong {
+            letter-spacing: 1px;
+        }
+        
+        p {
+            font-family: sans-serif;
+        }
+            </style>
+            
+<style>
+    
+    .formcon {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0.6rem 0;
+            align-items: center;
+            background: #fff;
+        }
+
+        .d3 {
+            display: flex;
+            background: #ffffff;
+            border: 2px solid #797979;
+            align-items: center;
+            border-radius: 30px;
+        }
+
+        .search-field {
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            border: 0px;
+            outline: none;
+            padding: 0rem 0.6rem;
+            background: transparent;
+            height: 3rem;
+            color: #000;
+            font-size: 1.1rem;
+        }
+
+        .search-btn {
+    background-color: #ffffff00;
+    border: none;
+    outline: none;
+    border-radius: 0 6px 6px 0;
+    display: flex;
+    align-items: center;
+}
+.search-btn {
+    height: 3rem;
+    padding: 0rem 0.6rem;
+}
+.mbtn {
+    padding: 10px;
+    background: yellow;
+    color: black;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.srchicon {
+    stroke: #5f5f5f;
+    fill: none;
+    stroke-width: 2;
+    width: 2.4rem;
+    height: 2.4rem;
+}
+.logoicon {
+    margin: 0 0.2rem;
+}
+.logoogle {
+    border-radius: 5px;
+    padding: 0px;
+    stroke: #4f4f4f;
+}
+.logoogle, .igtv, .logo {
+    height: 2.4rem;
+    width: 2.4rem;
+}
+</style>
+<nav class="tabcon">
+    <ul class="nuts">
+        
+        <li rel="vtab1" class="active">
+            <svg class="logoogle clrful" viewBox="0 0 24 24" width="100%" height="100%" role="img" stroke="#000000">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+        </li>
+        <li rel="vtab2" class="">
+            <svg class="logoogle clrful" viewBox="0 0 24 24" width="100%" height="100%" role="img" stroke="#000000">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+        </li>
+        <li rel="vtab3" class="">
+            <svg class="logoogle clrful" viewBox="0 0 24 24" width="100%" height="100%" role="img">
+                <defs>
+                    <linearGradient id="gradient6" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="25%" stop-color="#ffc107"></stop>
+                        <stop offset="75%" stop-color="#ff9800"></stop>
+                    </linearGradient>
+                </defs>
+                <path d="M18.36 6.64a9 9 0 1 1-12.73 0" stroke="url(#gradient6)"></path>
+                <line x1="12" y1="2" x2="12" y2="12" stroke="#ff9800"></line>
+            </svg>
+                </li>
+                <li rel="vtab4" class="">
+                    <svg class="logoogle clrful" viewBox="0 0 24 24" width="100%" height="100%" role="img" stroke="#000000">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                    </li>
+        <li rel="vtab5" class="">
+            <svg class="logoogle clrful" viewBox="0 0 24 24" width="100%" height="100%" role="img" stroke="#000000">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+        </li>
+    </ul>
+</nav>
+
+<style>
+    .nuts {
+    margin: 0.0rem 0rem 0.0rem 0.0rem;
+    border-right: 1px solid #f0f0f0;
+    align-items: center;
+    justify-content: flex-start;
+    width:   100%;
+    padding: 0rem 0rem;
+    z-index: 1;
+    list-style: none;
+    position: fixed;
+    display: flex;
+    bottom: 0;
+    background: #ffffff;
+}
+nav {
+    display: flex;
+}
+.nuts li.active {
+    background: #f0f0f0f0;
+}
+
+.nuts li {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.2rem 0.4rem;
+    border-bottom: 0px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+.clrful {
+    stroke-width: 1.4;
+    border-radius: 5px;
+    fill: none;
+    stroke: #4f4f4f;
+    padding: 4px;
+    box-shadow: none;
+    display: block;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: .2s ease;
+}
+.logoogle,
+.logo {
+    height: 2.4rem;
+    width: 2.4rem;
+}
+
+.logoogle {
+    border-radius: 5px;
+    padding: 0px;
+    stroke: #4f4f4f;
+}
+</style>

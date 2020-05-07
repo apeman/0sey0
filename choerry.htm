@@ -1,0 +1,736 @@
+<head>
+  <title>Tyube</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="tyuzu,tzuyu">
+  <meta name="description" content="Have fun ...!">
+  <meta name="copyright" content="Tyuzu Inc">
+  <meta name="language" content="EN">
+  <meta name="robots" content="index,follow">
+  <meta name="author" content="Apeman">
+  <meta name="designer" content="Apeman">
+  <meta name="owner" content="Apeman">
+  <style>
+  body::-webkit-scrollbar {
+    width: 14px;
+  }
+  body::-webkit-scrollbar-thumb {
+    background-color: #555;
+  }
+
+  body {
+    margin: 0;
+    background: #f2f2f2 url('') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+  }
+
+</style>
+</head>
+<body>
+  <div class="row">
+    <div>
+      <svg class="threedot" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="filter: drop-shadow(0 2px 3px #00ff98);">
+        <defs>
+          <linearGradient id="gradient5" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#2188ff"></stop>
+            <stop offset="100%" stop-color="#22ff44"></stop>
+          </linearGradient>
+        </defs>
+        <path fill="url(#gradient5)" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
+      </svg>
+    </div>
+    <form class="form-inline " id="search-form" name="search-form" onsubmit="return search()">
+      <div width="100%" class="form_container">
+        <div class="d3 float-right" style="width:100%;">
+          <input class="form-control search-field" type="search" id="query" style="width:100%;" placeholder="Search">
+        </div>
+        <button class="" type="submit" id="search-btn" name="search-btn" value="">
+          <svg class="srchicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"></path>
+          </svg>
+        </button>
+      </div>
+    </form>
+    <div class="usernav">
+      <svg class="threedot" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <defs>
+          <linearGradient id="gradient2" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="25%" stop-color="#C338FF"></stop>
+            <stop offset="75%" stop-color="#EA68FF"></stop>
+          </linearGradient>
+        </defs>
+        <path fill="url(#gradient2)" d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
+      </svg>
+    </div>
+  </div>
+
+  <nav class="navigation">
+    <input class="toggle" type="checkbox" id="more" aria-hidden="true" tabindex="-1">
+    <div class="navigation__inner">
+      <ul class="navigation__list">
+        <li class="navigation__item"><a class="navigation__link" href="/web">Web</a></li>
+        <li class="navigation__item"><a class="navigation__link" href="/news">News</a></li>
+        <li class="navigation__item"><a class="navigation__link" href="/images">Images</a></li>
+        <li class="navigation__item"><a class="navigation__link" href="/videos">Videos</a></li>
+        <li class="navigation__item"><a class="navigation__link" href="/qas">Q&amp;A</a></li>
+        <li class="navigation__item"><a class="navigation__link" href="/shop">Shopping</a></li>
+        <li class="navigation__item"><a class="navigation__link" href="/blog">Blog</a></li>
+        <li class="navigation__item"><a class="navigation__link" href="/maps">Maps</a></li>
+        <li class="navigation__item"><a class="navigation__link" href="/services">Services</a></li>
+        <li class="navigation__item"><a class="navigation__link" href="/all">Other</a></li>
+      </ul>
+      <div class="navigation__toggle">
+        <label class="navigation__link" for="more" aria-hidden="true">More</label>
+      </div>
+    </div>
+  </nav>
+  
+  <style>
+.navigation__link{text-decoration:none}.navigation__link,.note,.question,.rels span{cursor:pointer}.navigation{width:100%;background:#00c73c;letter-spacing:1.2px;text-transform:capitalize;font-family:Tahoma,sans-serif;z-index:10000;box-shadow:1px 1px 10px #eaeaea}.navigation__inner{display:flex;margin:0 auto;overflow:hidden;border-left:0;border-right:0;height:33px}.toggle:checked~.navigation__inner{height:auto}.navigation__link{display:block;padding:8px 20px;font-size:14px;color:#fff}.navigation__link:hover{text-decoration:none;background:#f4f4f4;color:#000}.navigation__logo{flex-shrink:0;align-self:flex-start}.navigation__logo .navigation__link{font-weight:700}.navigation__list{display:flex;flex-wrap:wrap;margin:0;padding:0;list-style:none;border-top:0;border-right:0;width:100%}@media screen and (max-width:400px){.navigation__item{flex-basis:100%}}.navigation__toggle{flex-shrink:0}.navigation__toggle .navigation__link{position:relative;padding-right:50px}.navigation__toggle .navigation__link:after{content:'';position:absolute;top:14px;right:24px;width:0;height:0;border-style:solid;border-width:5px 5px 0;border-color:#000 transparent transparent}.group:after,.header-wrap:after{content:""}.toggle:checked~.navigation__inner .navigation__toggle .navigation__link:after{border-width:0 5px 5px;border-color:transparent transparent #000}.toggle{position:absolute;z-index:-1;opacity:0}
+  .poptags {
+    background: #fff;
+    margin: 8px 0 16px 0;
+    box-shadow: 0px 0px 30px #e2e2e2;
+  }
+
+
+  .featured-article-line {
+    padding: 10px 18px;
+    flex: 2 1 100%;
+    -webkit-flex: 2 1 100%;
+    background: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+
+  .usernav {
+    display: flex;
+  }
+
+  .row {
+    padding: 2px 2px 3px 2px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .12);
+    position: relative;
+    display: flex;
+    background: #ffffff;
+    justify-content: space-between;
+  }
+
+  .container {
+    padding: 2px 4px;
+  }
+  .poptags {
+    background: #fff;
+    margin: 8px 0 16px 0;
+    box-shadow: 0px 0px 30px #e2e2e2;
+  }
+
+
+
+
+  .flex-container {
+    position: relative;
+  }
+
+
+  @media screen and (max-width: 640px) {
+    .threedot {
+      display: block;
+      margin: 3px 0.1em;
+      -webkit-transform: translate(0px, 3px);
+      transform: translate(0px, 3px);
+    }
+  }
+  @media screen and (max-width: 1199px) and (min-width: 641px){
+    .threedot {
+      display: block;
+      margin: 3px 1.4em;
+      -webkit-transform: translate(0px, 8px);
+      transform: translate(0px, 8px);
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    .form-inline {
+      max-width: 40em;
+    }
+    .threedot {
+      display: block;
+      margin: 0px 0.5em;
+      -webkit-transform: translate(0px, 6px);
+      transform: translate(0px, 6px);
+    }
+  }
+
+  .threedot {
+    width: 3em;
+    height: 3em;
+    transition: .2s ease;
+  }
+  .srchicon {
+    fill:#ffffff;
+    stroke:#ffffff;
+    width: 2em;
+    height: 2em;
+  }
+  .form_container { display: flex;}
+  .total-results {display:inline-block; }
+  @media(max-width:360px) {
+    .total-results { display:block; }
+  }
+  .form-inline {
+    padding: 5px;
+    width: 100%;
+  }
+  button {
+    /*background: linear-gradient(to left, #FF4E50 , #F9D423);*/
+    background: linear-gradient(to left, #00dc02 , #83ee17);
+    border: none;
+    outline: none;
+    color: white;
+    padding: 0.5em 1em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+  button:hover {
+    background: #00F260;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #0575E6, #00F260);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #0575E6, #00F260); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+  button:focus {
+    background: #2196f3;
+  }
+  .search-field {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    border: 4px;
+    outline: none;
+    background: rgba(218, 218, 218, 0.4);
+    height: 48px;
+    padding: 12px;
+    color: #000;
+    font-size: 1.1em;
+  }
+
+  input::placeholder {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: cursive;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+  </style>
+
+
+  <div style="width: 100%;margin-top: 10px;">
+    <div class="video-container">
+      <video src="file:///F:/CRUISE/cicada/Arin/RingedBonyAnkole.webm" class="video" width="1000" loop></video>
+      <div class="video-controls video-controls-visibility--hidden">
+        <button class="control-item play-and-pause-video fa fa-play" title="Play or Pause"></button>
+        <div class="progress-video-container">
+          <input type="range" class="control-item progress-video" min="0.0" value="0.00" step="any" max="8478.793" style="background-size: 22.3499% 100%;">
+          <span class="progress-time time-video">31:34</span>
+          <span class="duration-time time-video">02:141:18</span>
+        </div>
+        <button class="control-item fullscreen-video fa fa-expand"></button>
+      </div>
+    </div></div>
+    <div class="quarea">
+      <div class="thecard">
+        <div class="card-caption">
+          <span class="date">Thursday, July 16, 2015</span><br>
+          <span class="vidhead">The standard chunk of Lorem Ipsum</span>
+          <div>
+            <input type="checkbox" class="read-more-state" id="post-1">
+            <p class="read-more-wrap">Lorem ipsum dolor sit amet, consectetur adipisicing elit. <span class="read-more-target">Libero fuga facilis vel consectetur quos sapiente deleniti eveniet dolores tempore eos deserunt officia quis ab? Excepturi vero tempore minus beatae voluptatem!</span></p>
+            <label for="post-1" class="read-more-trigger"></label>
+          </div>
+        </div>
+      </div>
+
+      <article class="featured-article-line" style="text-shadow:none;border-bottom:1px solid #ddd;">
+        <span style="font-size:18px;">Comments</span>
+      </article>
+
+      <div class="wrapper">
+        <textarea id="comments" placeholder="Say something good..." class="common"></textarea>
+        <div class="action">
+          <input type="submit" value="Post">
+        </div>
+      </div>
+    </div>
+    <section class="poptags">
+
+    </section>
+
+    <style>
+
+    p {
+      font-size: 13px;
+    }
+.vidhead {
+  font-family: "Ubuntu",Segoe UI,sans-serif;
+}
+
+    .thecard {
+      display: block;
+      background-color: #fff;
+      border-radius: 4px;
+      transition: 400ms ease;
+    }
+
+    .card-img {
+      height: 225px;
+    }
+
+    .card-img img {
+      width:100%;
+      border-radius: 4px 4px 0px 0px;
+    }
+
+    .card-caption {
+      position: relative;
+      background: #ffffff;
+      padding: 5px 15px 5px 15px;
+      border-radius: 0px 0px 4px 4px;
+    }
+
+    .card-outmore {
+      padding: 10px 25px 10px 25px;
+      border-radius: 0px 0px 4px 4px;
+      border-top: 1px solid #e0e0e0;
+      background: #efefef;
+      color: #222;
+      display: inline-table;
+      width: 100%;
+      box-sizing: border-box;
+      transition: 400ms ease;
+    }
+    .card-outmore h5 {
+      float: left;
+    }
+    .card-outmore i {
+      float: right;
+    }
+
+    span.date {
+      font-size: 12px;
+    }
+    .read-more-state {
+      display: none;
+    }
+
+    .read-more-target {
+      opacity: 0;
+      max-height: 0;
+      font-size: 0;
+      transition: .25s ease;
+    }
+
+    .read-more-state:checked ~ .read-more-wrap .read-more-target {
+      opacity: 1;
+      font-size: inherit;
+      max-height: 999em;
+    }
+
+    .read-more-state ~ .read-more-trigger:before {
+      content: 'Show more';
+    }
+
+    .read-more-state:checked ~ .read-more-trigger:before {
+      content: 'Show less';
+    }
+
+    .read-more-trigger {
+      cursor: pointer;
+      display: inline-block;
+      padding: 0 .5em;
+      color: #666;
+      font-size: .9em;
+      line-height: 2;
+      border: 1px solid #ddd;
+      border-radius: .25em;
+    }
+
+    .quarea {
+
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .common {
+      width: 100%;
+      min-height: 50px;
+      font-size: 15px;
+      overflow: hidden;
+      padding: 15px;
+      outline: none;
+    }
+    .action {
+      height: 41px;
+      background: #7f72fa;
+      margin: -4px auto;
+      outline: none;
+    }
+    .action input[type="submit"] {
+      width: 100%;
+      padding: 12px 5px;
+      border: 0px;
+      background: #7f72fa;
+      color: #fff;
+      float: right;
+      /* margin: 5px; */
+      cursor: pointer;
+      transition: all 0.5s ease;
+      -webkit-transition: all 0.5s ease;
+    }
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      border: none;
+      box-sizing: border-box;
+    }
+    :root {
+      --colorBtnPrincipal: #D2D2D2;
+      --rangeBg: #333;
+    }
+    /*              VIDEO CONTAINER               */
+    .video-container {
+      position: relative;
+      max-width: 1000px;
+      margin: 0 auto;
+      height: vmax;
+    }
+    .video {
+      max-width: 100%;
+      max-height: 40vmax;
+    }
+
+    .video::-webkit-media-controls, .video::-webkit-media-controls-enclosure {
+      display:none !important;
+    }
+    /*              VIDEO CONTROLS               */
+    .video:-moz-full-screen + .video-controls {
+      bottom: 0;
+    }
+    .video:-webkit-full-screen + .video-controls {
+      bottom: 0;
+    }
+
+    .video-controls {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+      z-index: 2147483647;
+      padding: 10px;
+      width: 100%;
+      background-color: #ffffff;
+    -ms-transform: translate(50px, 100px); /* IE 9 */
+    -webkit-transform: translate(50px, 100px); /* Safari */
+    transform: translate(50px, 100px);
+    display: none;
+    transition: .4s ease-out;
+    transition-delay: 2s;
+    }
+    .video-container:hover .video-controls {
+    display: flex;
+    -ms-transform: translate(0px, 0px); /* IE 9 */
+    -webkit-transform: translate(0px, 0px); /* Safari */
+    transform: translate(0px, 0px);
+    transition: .4s ease-out;
+    transition-delay: 2s;
+    }
+
+    .play-and-pause-video {
+    padding: 15px;
+    width: 15px;
+    border: 0px;
+    border-radius: 0px;
+}
+
+    /*              VIDEO PROGRESS               */
+    .progress-video-container {
+      display: flex;
+      align-items: center;
+      position: relative;
+      width: 65%;
+    }
+    .time-video {
+      font-family: sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      color: var(--colorBtnPrincipal);
+    }
+    .progress-time { order: -1;}
+
+    .progress-video, .slide-volume-video {
+      background-image: linear-gradient(to left, #0575E6, #00F260);
+      background-repeat: no-repeat;
+      background-size: 0% 100%;
+    }
+    .progress-video, .slide-volume-video {
+      width: 100%;
+      height: 10px;
+      margin: 0 10px;
+      -webkit-appearance: none;
+      border-radius: 4px;
+      outline: none;
+      background-color: #cccccc;
+    }
+
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      border: none;
+      box-sizing: border-box;
+    }
+    :root {
+      --colorBtnPrincipal: #999999;
+      --rangeBg: #333;
+    }
+    .fa {
+      padding: 8px 12px;
+    }
+
+    /*            ESTILOS COMUNS              */
+    .progress-video::-moz-range-thumb,
+    .slide-volume-video::-moz-range-thumb {
+      width: 15px;
+      height: 15px;
+      background-color: var(--colorBtnPrincipal);
+      border: none;
+    }
+    .slide-volume-video::-webkit-slider-thumb, .progress-video::-webkit-slider-thumb {
+      width: 15px;
+      height: 15px;
+      -webkit-appearance: none;
+      border-radius: 50%;
+      background-color: var(--colorBtnPrincipal);
+    }
+    .progress-video::-moz-range-track, .slide-volume-video::-moz-range-track {
+      height: 0;
+      background-color: var(--rangeBg);
+      border-radius: 4px;
+    }
+
+
+
+    /*             MEDIAS QUERIES*            */
+    @media (max-width: 480px){
+      .video-controls {
+        justify-content: space-around;
+        padding: 10px 0px;
+      }
+      .time-video { font-size: 12px; }
+      .play-and-pause-video {
+        width: 15px;
+        padding: 0;
+        background: none;
+        box-shadow: none;
+      }
+      .progress-video { margin: 0 3px;}
+      .slide-volume-video { width: 45px; }
+    }
+    @media (min-width: 1200){
+      .video:-webkit-full-screen + .video-controls > .progress-video-container {
+        width: 100%;
+      }
+    }
+
+  </style>
+  <script>
+  const $VIDEO = document.querySelector('.video'),
+  $VIDEO_CONTROLS = document.querySelector('.video-controls'),
+  $BUTTON_PAUSE_AND_PLAY = document.querySelector('.play-and-pause-video'),
+  $PROGRESS_VIDEO = document.querySelector('.progress-video'),
+  $CHANGE_VOLUME = document.querySelector('.slide-volume-video'),
+  $FULLSCREEN = document.querySelector('.fullscreen-video');
+
+  function durationVideo() {
+    let durationMidia = $VIDEO.duration,
+    $durationTime = document.querySelector('.duration-time');
+    $durationTime.innerHTML = transformVideoDuration(durationMidia);
+    animationVolume($VIDEO.volume);
+  };
+
+  function progressVideo() {
+    var autoProgress = $VIDEO.currentTime,
+    $progressBar = document.querySelector('.progress-video'),
+    $progressTime = document.querySelector('.progress-time');
+    $progressBar.value = autoProgress.toFixed(0);
+    $progressBar.setAttribute('max', $VIDEO.duration);
+
+    $progressTime.innerHTML = transformVideoDuration(autoProgress);
+    animationProgress();
+  };
+
+  function ChangeProgressVideo() {
+    $changeProgress = document.querySelector('.progress-video');
+    $VIDEO.currentTime = $changeProgress.value;
+  };
+
+  function animationProgress() {
+    let percentageProgress = (($PROGRESS_VIDEO.value - $PROGRESS_VIDEO.min) * 100) / ($PROGRESS_VIDEO.max - $PROGRESS_VIDEO.min);
+    $PROGRESS_VIDEO.style.backgroundSize = `${percentageProgress}% 100%`;
+    console.log('progress: ' + percentageProgress)
+  };
+
+  function animationVolume(volume) {
+    let animationVolume = volume;
+    animationVolume = volume * 100;
+    if (animationVolume === 100) {
+      animationVolume = 100;
+    }
+    $CHANGE_VOLUME.style.backgroundSize = `${animationVolume}% 100%`;
+  };
+
+  function transformVideoDuration(timeVideo) {
+    let hours, mins, secds, time;
+    hours = Math.floor(timeVideo / 3600);
+    mins = Math.floor(timeVideo / 60);
+    secds = Math.floor(timeVideo - mins * 60)
+    return time = formartTimeVideo(hours, mins, secds);
+  };
+
+  function formartTimeVideo(hours, mins, secds) {
+    let time;
+    if (hours < 1) {
+      hours = '';
+    };
+    if (hours < 10 && hours != '') {
+      hours = '0' + hours + ':';
+    };
+    if (mins < 10) {
+      mins = '0' + mins;
+    }
+    if (secds < 10) {
+      secds = '0' + secds;
+    }
+    return time = `${hours}${mins}:${secds}`;
+  };
+
+  function playAndPause() {
+    let $playButton = document.querySelector('.play-and-pause-video');
+    if ($VIDEO.paused == true) {
+      playVideo();
+      $playButton.classList.remove('fa-play');
+      $playButton.classList.add('fa-pause');
+    } else {
+      pauseVideo();
+      $playButton.classList.remove('fa-pause');
+      $playButton.classList.add('fa-play');
+    }
+  };
+
+  function pauseVideo(){
+    $VIDEO.pause();
+  };
+
+  function playVideo(){
+    $VIDEO.play();
+  };
+
+  function volume() {
+    let $changeVolume = document.querySelector('.slide-volume-video').value;
+    $VIDEO.volume = $changeVolume;
+    let $buttonVolume = document.querySelector('.volume-video');
+    if ($VIDEO.volume === 0) {
+      $buttonVolume.classList.remove('fa-volume-up');
+      $buttonVolume.classList.add('fa-volume-off');
+    } else {
+      $buttonVolume.classList.remove('fa-volume-off');
+      $buttonVolume.classList.add('fa-volume-up');
+    };
+    animationVolume($changeVolume);
+  };
+
+  function endVideo(){
+    let $playButtonEnd = document.querySelector('.play-and-pause-video');
+    $VIDEO_CONTROLS.classList.remove('video-controls-visibility--hidden');
+    $playButtonEnd.classList.remove('fa-pause');
+    $playButtonEnd.classList.add('fa-play');
+
+  }
+
+  function videoFullScreen() {
+    if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {
+      if ($VIDEO.requestFullscreen) {
+        $VIDEO.requestFullscreen();
+      } else if ($VIDEO.msRequestFullscreen) {
+        $VIDEO.msRequestFullscreen();
+      } else if ($VIDEO.mozRequestFullScreen) {
+        $VIDEO.mozRequestFullScreen();
+      } else if ($VIDEO.webkitRequestFullscreen) {
+        $VIDEO.webkitRequestFullscreen();
+      }
+      $FULLSCREEN.classList.remove('fa-expand');
+      $FULLSCREEN.classList.add('fa-compress');
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.msExitFullscreen) {
+        document.msExitFullscreen();
+      } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+      } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+      }
+      $FULLSCREEN.classList.remove('fa-compress');
+      $FULLSCREEN.classList.add('fa-expand');
+    };
+  };
+
+  function controlVisibility(){
+    setTimeout(function(){
+      $VIDEO_CONTROLS.classList.remove('video-controls-visibility--visible');
+      $VIDEO_CONTROLS.classList.add('video-controls-visibility--hidden');
+    }, 10000)
+    console.log('play')
+  };
+
+
+  //               EVENTS PLAYER
+
+  // EVENTS VIDEO
+  $VIDEO.addEventListener('loadeddata', durationVideo);
+
+  $VIDEO.addEventListener('timeupdate', progressVideo);
+
+  $VIDEO.addEventListener('play', controlVisibility);
+
+  $VIDEO.addEventListener('click', playAndPause);
+
+  $VIDEO.addEventListener('ended', endVideo);
+
+  // EVENTS VIDEO CONTROLS
+
+  $PROGRESS_VIDEO.addEventListener('change', ChangeProgressVideo)
+
+  $BUTTON_PAUSE_AND_PLAY.addEventListener('click', playAndPause);
+
+  $CHANGE_VOLUME.addEventListener('change', volume);
+
+  $FULLSCREEN.addEventListener('click', videoFullScreen);
+
+</script>
+
+
+</body></html>

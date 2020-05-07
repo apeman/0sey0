@@ -1,0 +1,377 @@
+
+
+
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" id="viewport">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="Description" content="Computer science simplified so that noobs can understand it.">
+    <meta name="robots" content="noimageindex, noarchive">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <style>
+        body {
+            font-family: "Playfair Display", -apple-system, BlinkMacSystemFont, 'Segoe UI', Ubuntu, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            background: #40d446;
+            font-size: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            outline: none;
+            box-sizing: border-box;
+            text-decoration: none;
+            vertical-align: baseline;
+            list-style-type: none;
+            border: 0;
+            outline: 0;
+        }
+
+    </style>
+    <style>
+        
+        @media screen and (max-width: 600px) {}
+
+        @media screen and (max-width: 1199px) and (min-width: 601px) {}
+
+        @media screen and (min-width: 1200px) {
+            body::-webkit-scrollbar {
+                width: 12px;
+            }
+
+            body::-webkit-scrollbar-thumb {
+                background-color: #555;
+            }
+
+        }
+    </style>
+    </head>
+        <script async src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+      
+      <div style="width: 100%;margin-top: 10px;">
+        <div class="video-container">
+          <video src="Sunset  Sunrise of Korea.mp4" class="video" width="1000" loop autoplay></video>
+          <input type="range" class="control-item progress-video" min="0.0" value="0.00" step="any" max="8478.793" style="background-size: 0% 100%;">
+          <div class="progress-video-container">
+            <span class="progress-time time-video">31:34</span>
+            &nbsp; / &nbsp;
+            <span class="duration-time time-video">02:141:18</span>
+          </div>
+          <div class="video-controls video-controls-visibility--hidden">
+            <button class="control-item play-and-pause-video fa fa-play" title="Play or Pause"></button>
+            <button class="control-item fullscreen-video fa fa-expand"></button>
+          </div>
+        </div>
+    </div>
+</main>
+<script>
+    const $VIDEO = document.querySelector('.video'),
+    $BUTTON_PAUSE_AND_PLAY = document.querySelector('.play-and-pause-video'),
+    $PROGRESS_VIDEO = document.querySelector('.progress-video'),
+    $CHANGE_VOLUME = document.querySelector('.slide-volume-video'),
+    $FULLSCREEN = document.querySelector('.fullscreen-video');
+  
+    function durationVideo() {
+      let durationMidia = $VIDEO.duration,
+      $durationTime = document.querySelector('.duration-time');
+      $durationTime.innerHTML = transformVideoDuration(durationMidia);
+      animationVolume($VIDEO.volume);
+    };
+  
+    function progressVideo() {
+      var autoProgress = $VIDEO.currentTime,
+      $progressBar = document.querySelector('.progress-video'),
+      $progressTime = document.querySelector('.progress-time');
+      $progressBar.value = autoProgress.toFixed(0);
+      $progressBar.setAttribute('max', $VIDEO.duration);
+  
+      $progressTime.innerHTML = transformVideoDuration(autoProgress);
+      animationProgress();
+    };
+  
+    function ChangeProgressVideo() {
+      $changeProgress = document.querySelector('.progress-video');
+      $VIDEO.currentTime = $changeProgress.value;
+    };
+  
+    function animationProgress() {
+      let percentageProgress = (($PROGRESS_VIDEO.value - $PROGRESS_VIDEO.min) * 100) / ($PROGRESS_VIDEO.max - $PROGRESS_VIDEO.min);
+      $PROGRESS_VIDEO.style.backgroundSize = `${percentageProgress}% 100%`;
+      console.log('progress: ' + percentageProgress)
+    };
+  
+    function animationVolume(volume) {
+      let animationVolume = volume;
+      animationVolume = volume * 100;
+      if (animationVolume === 100) {
+        animationVolume = 100;
+      }
+      $CHANGE_VOLUME.style.backgroundSize = `${animationVolume}% 100%`;
+    };
+  
+    function transformVideoDuration(timeVideo) {
+      let hours, mins, secds, time;
+      hours = Math.floor(timeVideo / 3600);
+      mins = Math.floor(timeVideo / 60);
+      secds = Math.floor(timeVideo - mins * 60)
+      return time = formartTimeVideo(hours, mins, secds);
+    };
+  
+    function formartTimeVideo(hours, mins, secds) {
+      let time;
+      if (hours < 1) {
+        hours = '';
+      };
+      if (hours < 10 && hours != '') {
+        hours = '0' + hours + ':';
+      };
+      if (mins < 10) {
+        mins = '0' + mins;
+      }
+      if (secds < 10) {
+        secds = '0' + secds;
+      }
+      return time = `${hours}${mins}:${secds}`;
+    };
+  
+    function playAndPause() {
+      let $playButton = document.querySelector('.play-and-pause-video');
+      if ($VIDEO.paused == true) {
+        playVideo();
+        $playButton.classList.remove('fa-play');
+        $playButton.classList.add('fa-pause');
+      } else {
+        pauseVideo();
+        $playButton.classList.remove('fa-pause');
+        $playButton.classList.add('fa-play');
+      }
+    };
+  
+    function pauseVideo(){
+      $VIDEO.pause();
+    };
+  
+    function playVideo(){
+      $VIDEO.play();
+    };
+  
+    function volume() {
+      let $changeVolume = document.querySelector('.slide-volume-video').value;
+      $VIDEO.volume = $changeVolume;
+      let $buttonVolume = document.querySelector('.volume-video');
+      if ($VIDEO.volume === 0) {
+        $buttonVolume.classList.remove('fa-volume-up');
+        $buttonVolume.classList.add('fa-volume-off');
+      } else {
+        $buttonVolume.classList.remove('fa-volume-off');
+        $buttonVolume.classList.add('fa-volume-up');
+      };
+      animationVolume($changeVolume);
+    };
+  
+    function endVideo(){
+      let $playButtonEnd = document.querySelector('.play-and-pause-video');
+      $VIDEO_CONTROLS.classList.remove('video-controls-visibility--hidden');
+      $playButtonEnd.classList.remove('fa-pause');
+      $playButtonEnd.classList.add('fa-play');
+  
+    }
+  
+    function videoFullScreen() {
+      if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {
+        if ($VIDEO.requestFullscreen) {
+          $VIDEO.requestFullscreen();
+        } else if ($VIDEO.msRequestFullscreen) {
+          $VIDEO.msRequestFullscreen();
+        } else if ($VIDEO.mozRequestFullScreen) {
+          $VIDEO.mozRequestFullScreen();
+        } else if ($VIDEO.webkitRequestFullscreen) {
+          $VIDEO.webkitRequestFullscreen();
+        }
+        $FULLSCREEN.classList.remove('fa-expand');
+        $FULLSCREEN.classList.add('fa-compress');
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.msExitFullscreen) {
+          document.msExitFullscreen();
+        } else if (document.mozCancelFullScreen) {
+          document.mozCancelFullScreen();
+        } else if (document.webkitExitFullscreen) {
+          document.webkitExitFullscreen();
+        }
+        $FULLSCREEN.classList.remove('fa-compress');
+        $FULLSCREEN.classList.add('fa-expand');
+      };
+    };
+  
+    function controlVisibility(){
+      setTimeout(function(){
+        $VIDEO_CONTROLS.classList.remove('video-controls-visibility--visible');
+        $VIDEO_CONTROLS.classList.add('video-controls-visibility--hidden');
+      }, 10000)
+      console.log('play')
+    };
+  
+  
+    //               EVENTS PLAYER
+  
+    // EVENTS VIDEO
+    $VIDEO.addEventListener('loadeddata', durationVideo);
+  
+    $VIDEO.addEventListener('timeupdate', progressVideo);
+  
+    $VIDEO.addEventListener('play', controlVisibility);
+  
+    $VIDEO.addEventListener('click', playAndPause);
+  
+    $VIDEO.addEventListener('ended', endVideo);
+  
+    // EVENTS VIDEO CONTROLS
+  
+    $PROGRESS_VIDEO.addEventListener('change', ChangeProgressVideo)
+  
+    $BUTTON_PAUSE_AND_PLAY.addEventListener('click', playAndPause);
+  
+    $CHANGE_VOLUME.addEventListener('change', volume);
+  
+    $FULLSCREEN.addEventListener('click', videoFullScreen);
+  
+  </script>
+  
+  <style>
+
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      border: none;
+      box-sizing: border-box;
+    }
+    :root {
+      --colorBtnPrincipal: #D2D2D2;
+      --rangeBg: #333;
+    }
+    /*              VIDEO CONTAINER               */
+    .video-container {
+      position: relative;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .video {
+      max-width: 100%;
+      /*max-height: 42vmax;*/
+      background-color: #fff;
+    }
+
+    .video::-webkit-media-controls, .video::-webkit-media-controls-enclosure {
+      display:none !important;
+    }
+    /*              VIDEO CONTROLS               */
+    .video:-moz-full-screen + .video-controls {
+      bottom: 0;
+    }
+    .video:-webkit-full-screen + .video-controls {
+      bottom: 0;
+    }
+
+
+    .play-and-pause-video, 
+    .fullscreen-video {
+    padding: 15px;
+    width: 15px;
+    display: none;
+    border: 0px;
+    border-radius: 0px;
+}
+
+.video-container button{
+background-color: #000;
+}
+    /*              VIDEO PROGRESS               */
+    .progress-video-container {
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+    .time-video {
+      font-family: sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      color: var(--colorBtnPrincipal);
+    }
+    .progress-time { order: -1;}
+
+    .progress-video, .slide-volume-video {
+      background-image: linear-gradient(to left, #0575E6, #00F260);
+      background-repeat: no-repeat;
+      background-size: 0% 100%;
+    }
+    .progress-video, .slide-volume-video {
+      width: 100%;
+      height: 14px;
+      margin: 4px 0;
+      position: sticky;
+      -webkit-appearance: none;
+      outline: none;
+      background-color: #fff;
+    }
+
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      border: none;
+      box-sizing: border-box;
+    }
+    :root {
+      --colorBtnPrincipal: #000000;
+      --rangeBg: #333;
+    }
+
+    /*            ESTILOS COMUNS              */
+    .progress-video::-moz-range-thumb,
+    .slide-volume-video::-moz-range-thumb {
+      width: 15px;
+      height: 15px;
+      background-color: var(--colorBtnPrincipal);
+      border: none;
+    }
+    .slide-volume-video::-webkit-slider-thumb, .progress-video::-webkit-slider-thumb {
+      width: 15px;
+      height: 15px;
+      -webkit-appearance: none;
+      /*border-radius: 50%;*/
+      background-color: var(--colorBtnPrincipal);
+    }
+    .progress-video::-moz-range-track, .slide-volume-video::-moz-range-track {
+      height: 0;
+      background-color: var(--rangeBg);
+      border-radius: 4px;
+    }
+
+
+
+    /*             MEDIAS QUERIES*            */
+    @media (max-width: 480px){
+      .time-video { font-size: 12px; }
+      .play-and-pause-video {
+        width: 15px;
+        padding: 0;
+        background: none;
+        box-shadow: none;
+        display: none;
+      }
+      .progress-video { margin: 0 3px;}
+      .slide-volume-video { width: 45px; }
+    }
+    @media (min-width: 1200){
+    }
+
+  </style>

@@ -1,0 +1,599 @@
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" id="viewport" name="viewport">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="noimageindex, noarchive" name="robots">
+    <link href="https://fonts.googleapis.com/css?family=Bellota|Nanum+Gothic" rel="stylesheet">
+    <meta content="yes" name="mobile-web-app-capable">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        body {
+            font-family: "Bellota", -apple-system, BlinkMacSystemFont, 'Segoe UI', Ubuntu, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            background: #ffffff;
+            font-size: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            outline: none;
+            box-sizing: border-box;
+            text-decoration: none;
+            vertical-align: baseline;
+            list-style-type: none;
+            border: 0;
+            outline: 0;
+        }
+
+    </style>
+    </head>
+    <style>
+        
+        @media screen and (max-width: 600px) {}
+
+        @media screen and (max-width: 1199px) and (min-width: 601px) {}
+
+        @media screen and (min-width: 1200px) {
+            body::-webkit-scrollbar {
+                width: 12px;
+            }
+
+            body::-webkit-scrollbar-thumb {
+                background-color: #555;
+            }
+
+        }
+    </style>
+      <nav class="navigation">
+        <input class="toggle" type="checkbox" id="more" aria-hidden="true" tabindex="-1">
+        <div class="navigation__inner">
+          <ul class="navigation__list">
+            <li class="navigation__item"><a class="navigation__link" href="/web">Web</a></li>
+            <li class="navigation__item"><a class="navigation__link" href="/news">Travel</a></li>
+            <li class="navigation__item"><a class="navigation__link" href="/images">Images</a></li>
+            <li class="navigation__item"><a class="navigation__link" href="/videos">Videos</a></li>
+            <li class="navigation__item"><a class="navigation__link" href="/qas">Q&amp;A</a></li>
+            <li class="navigation__item"><a class="navigation__link" href="/shop">Shopping</a></li>
+            <li class="navigation__item"><a class="navigation__link" href="/blog">Blog</a></li>
+            <li class="navigation__item"><a class="navigation__link" href="/maps">Maps</a></li>
+            <li class="navigation__item"><a class="navigation__link" href="/services">Services</a></li>
+            <li class="navigation__item"><a class="navigation__link" href="/all">Other</a></li>
+          </ul>
+          <div class="navigation__toggle">
+            <label class="navigation__link" for="more" aria-hidden="true">More</label>
+          </div>
+        </div>
+      </nav>
+
+      <style>
+
+.navigation {
+  width: 100%;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  z-index: 10000;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.navigation__inner {
+  display: flex;
+  margin: 0 auto;
+  overflow: hidden;
+  border-left: 0;
+  border-right: 0;
+  height: 34px;
+  background: #fff;
+}
+
+.toggle:checked ~ .navigation__inner {
+  height: auto;
+}
+
+.navigation__link {
+    display: block;
+    padding: 8px 20px 8px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #9c9c9c;
+    cursor: pointer;
+}
+
+.navigation__link:hover {
+  text-decoration: none;
+  background: #fff;
+  color: #000;
+}
+
+.navigation__logo {
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+
+.navigation__logo .navigation__link {
+  font-weight: bold;
+}
+
+.navigation__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 0;
+  border-right: 0;
+  width: 100%;
+}
+
+@media screen and (max-width: 400px) {
+  .navigation__item {
+    flex-basis: 100%;
+  }
+}
+
+.navigation__toggle {
+  flex-shrink: 0;
+}
+
+.navigation__toggle .navigation__link {
+  position: relative;
+  padding-right: 50px;
+}
+
+.navigation__toggle .navigation__link:after {
+  content: "";
+  position: absolute;
+  top: 14px;
+  right: 24px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 5px 0 5px;
+  border-color: #000 transparent transparent transparent;
+}
+
+.toggle:checked
+  ~ .navigation__inner
+  .navigation__toggle
+  .navigation__link:after {
+  border-width: 0 5px 5px 5px;
+  border-color: transparent transparent #000 transparent;
+}
+
+.toggle {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+
+      </style>
+<style>
+    
+    .formcon {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0.4rem;
+            align-items: center;
+            background: #fff;
+        }
+
+        .d3 {
+            display: flex;
+            background: #ffffff;
+            border: 2px solid #797979;
+            max-width: 650px;
+            align-items: center;
+            border-radius: 6px;
+        }
+
+        .search-field {
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            border: 0px;
+            width: 100%;
+            outline: none;
+            padding: 0rem 0.3rem;
+            background: transparent;
+            height: 3rem;
+            color: #000;
+            font-size: 1rem;
+        }
+
+        .search-btn {
+    background-color: yellow;
+    border: 0 3px 3px 0;
+    outline: none;
+    display: flex;
+    align-items: center;
+}
+.search-btn {
+    height: 3rem;
+    padding: 0rem 0.6rem;
+}
+.mbtn {
+    padding: 10px;
+    background: yellow;
+    color: black;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.srchicon {
+    stroke: #5f5f5f;
+    fill: none;
+    stroke-width: 2;
+    width: 2.2rem;
+    height: 2.2rem;
+}
+
+.logoogle {
+    border-radius: 5px;
+    padding: 0px;
+    stroke: #4f4f4f;
+}
+.logoogle, .logo {
+    height: 3rem;
+    width: 3rem;
+}
+</style>
+<style>
+    @media (min-width: 480px) {
+      .wrapper {
+        margin: .5rem;
+      }
+    
+      .settings {
+        display: flex;
+        justify-content: stretch;
+      }
+      .settings .square {
+        flex: 1;
+      }
+    }
+    @media (min-width: 670px) {
+      .wrapper {
+        display: flex;
+        align-items: stretch;
+      }
+    
+      .settings {
+        flex-direction: column;
+        flex: 1;
+      }
+      .settings .square {
+        flex: none;
+      }
+    
+      .comparison {
+        display: flex;
+        flex: 1;
+      }
+      .comparison .square {
+        width: 100%;
+      }
+    }
+    .square {
+      color: #fff;
+      padding: 3rem;
+      margin: .6rem;
+      display: flex;
+      flex-direction: column;
+      border-radius: 2px;
+      font-family: 'Trebuchet MS', sans-serif;
+      line-height: 1.4;
+    }
+    .square h2 {
+      margin: 0;
+    }
+    .square p:last-child {
+      margin-bottom: 0;
+    }
+    
+    .square--red {
+      background-image: url(https://psimonmyway.com/wp-content/uploads/2014/11/image1.jpeg);
+      background-position: center;
+    }
+    
+    .square--blue {
+      background-image: url(https://images.summitmedia-digital.com/cosmo/images/june_2015/06-15/travel-instagram-accounts-to-follow.jpg);
+      background-position: center;
+    }
+    
+    .square--purple {
+      background-image: url(https://www.smartertravel.com/uploads/2016/06/Instagram-HERO-1400x500.jpg);
+      background-position: center;
+    }
+    
+        .centry {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem auto;
+}
+</style>
+<div class="flexy">
+<div class="kiwi">
+
+    <div class="wrapper">
+        <div class="comparison">
+          <div class="square square--red">
+            <h2>Tomato anyone?</h2>
+            <p>Tomato is the best, period.</p>
+          </div>
+        </div>
+          <div class="settings">
+            <div class="square square--purple">
+              <h2>Purple square</h2>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excellent, great pickup!!</p>
+            </div>
+            <div class="square square--blue">
+              <h2>Blue square</h2>
+              <p>Quick catchup?</p>
+            </div>
+          </div>
+        </div>
+        
+    <h1 class="magical" id="introduction">Leopard</h1>
+    
+    <p>Compared to other wild cats, the leopard has relatively short legs and a long body with a large skull. Its fur is marked with rosettes. It is similar in appearance to the jaguar, but has a smaller, lighter physique, and its rosettes are generally smaller, more densely packed and without central spots. Leopard fossils were also found in Japan.</p>
+</div>
+
+<div class="centry">
+<div class="musicbox d3">
+    <input type="text" class="search-field" id="videoFile" title="video file input field" value="file:///F:/kmusic/LoonaTheAlarm.mp3">
+    <button class="search-btn " id="loadVideo" title="Load video button">
+        <svg xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24" class="srchicon ">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+    </button>
+</div>
+<video id="Video1"  class="musicbox" height="264" width="352" title="video element" src="file:///F:/kmusic/LoonaTheAlarm.mp3">
+    HTML5 Video is required for this example
+</video>
+<div id="buttonbar">
+    <div id="status">
+        C: <span id="curTime" title="Current time">0</span> /
+        L: <span id="vLen">0</span>
+    </div>
+</div>
+<div id="buttonbar"  class="mbtnbox">
+    <button class="mbtn" id="rew" title="Rewind button">&lt;&lt;</button>
+    <button class="mbtn" id="slower" title="Slower playback button">Ss</button>
+    <button class="mbtn" id="play" title="Play button">P</button>
+    <button class="mbtn" id="faster" title="Faster playback button">Ff</button>
+    <button class="mbtn" id="fwd" title="Forward button">&gt;&gt;</button>
+</div>
+    <div id="buttonbar"  class="mbtnbox">
+    <button class="mbtn" id="restart" title="Restart button">S</button>
+    <button class="mbtn" id="mute" title="Mute button"><img alt="Not Muted" src="vol2.png"></button>
+    <button class="mbtn" id="normal" title="Reset playback rate button">R</button>
+</div>
+</div>
+</div>
+<style>
+    .kiwi {
+        width: 100%;
+        max-width: 900px;
+        padding: 0 1rem;
+        background: white;
+        /* border-top: 1px solid #f0f0f0; */
+    }
+    .kiwi h1 {
+        text-transform: capitalize;
+        font-family: "Roboto", sans-serif;
+        letter-spacing: 2px;
+        font-size: 30px;
+        font-weight: 300;
+        margin-top: 20px;
+    }
+    
+    .magical {
+        background-image: linear-gradient(120deg, #000000 0%, #ffffff 100%);
+        background-repeat: no-repeat;
+        background-size: 100% 0.2em;
+        background-position: 0% 88%;
+        padding-bottom: 4px;
+        display: inline-block;
+        transition: background-size 0.25s ease-in;
+    }
+    .magical::after {
+        width: 0px;
+        height: 0px;
+        background: black;
+        display: block;
+        content: '';
+        margin-top: 8px;
+    }
+    .kiwi p {
+        color: #616161;
+        font-size: 1.08em;
+        word-spacing: 6px;
+    }
+    .pic {
+        float: right;
+        padding: 0.5rem;
+        width: 260px;
+    }
+    
+    </style>
+    <style>
+.flexy {
+    display: flex;;
+}
+.musicbox{
+    margin: 0.4rem;
+    display: flex;
+    border: 2px solid yellow;
+    max-width: 354px;
+}
+.mbtnbox{
+    margin: 0.4rem;
+    display: flex;
+    border: 2px solid yellow;
+    max-width: 354px;
+justify-content: space-between;
+}
+
+</style>
+
+
+<script>
+    var video = document.getElementById("Video1");
+    var vLength;
+    var pgFlag = ""; // used for progress tracking
+    if (video.canPlayType) { // tests that we have HTML5 video support
+
+        //  video button helper functions
+        //  play video
+        function vidplay(evt) {
+            if (video.src == "") { // inital source load
+                getVideo();
+            }
+            if (video.paused) { // play the file, and display pause symbol
+                video.play();
+            } else { // pause the file, and display play symbol
+                video.pause();
+            }
+        }
+
+        //  load video file from input field
+        function getVideo() {
+            var fileURL = document.getElementById("videoFile").value; // get input field
+            if (fileURL != "") {
+                video.src = fileURL;
+                video.load(); // if HTML source element is used
+                document.getElementById("play").click(); // start play
+            } else {
+                errMessage("Enter a valid video URL"); // fail silently
+            }
+        }
+
+
+        //  button helper functions
+        //  skip forward, backward, or restart
+        function setTime(tValue) {
+            //  if no video is loaded, this throws an exception
+            try {
+                if (tValue == 0) {
+                    video.currentTime = tValue;
+                } else {
+                    video.currentTime += tValue;
+                }
+
+            } catch (err) {
+                // errMessage(err) // show exception
+                errMessage("Video content might not be loaded");
+            }
+        }
+
+        // change volume based on incoming value
+        function setVol(value) {
+            var vol = video.volume;
+            vol += value;
+            //  test for range 0 - 1 to avoid exceptions
+            if (vol >= 0 && vol <= 1) {
+                // if valid value, use it
+                video.volume = vol;
+            } else {
+                // otherwise substitute a 0 or 1
+                video.volume = (vol < 0) ? 0 : 1;
+            }
+        }
+        //  button events
+        //  Play
+        document.getElementById("play").addEventListener("click", vidplay, false);
+        //  Restart
+        document.getElementById("restart").addEventListener("click", function() {
+            setTime(0);
+        }, false);
+        //  Skip backward 10 seconds
+        document.getElementById("rew").addEventListener("click", function() {
+            setTime(-10);
+        }, false);
+        //  Skip forward 10 seconds
+        document.getElementById("fwd").addEventListener("click", function() {
+            setTime(10);
+        }, false);
+        //  set src == latest video file URL
+        document.getElementById("loadVideo").addEventListener("click", getVideo, false);
+
+        // playback speed buttons
+        document.getElementById("slower").addEventListener("click", function() {
+            video.playbackRate -= .25;
+        }, false);
+        document.getElementById("faster").addEventListener("click", function() {
+            video.playbackRate += .25;
+        }, false);
+        document.getElementById("normal").addEventListener("click", function() {
+            video.playbackRate = 1;
+        }, false);
+        document.getElementById("mute").addEventListener("click", function(evt) {
+            if (video.muted) {
+                video.muted = false;
+            } else {
+                video.muted = true;
+            }
+        }, false);
+
+        //  any video error will fail with message
+        video.addEventListener("error", function(err) {
+            errMessage(err);
+        }, true);
+        // content has loaded, display buttons and set up events
+        video.addEventListener("canplay", function() {
+            document.getElementById("buttonbar").style.display = "flex";
+        }, false);
+
+        //  display video duration when available
+        video.addEventListener("loadedmetadata", function() {
+            vLength = video.duration.toFixed(1);
+            document.getElementById("vLen").textContent = vLength; // global variable
+        }, false);
+
+        //  display the current and remaining times
+        video.addEventListener("timeupdate", function() {
+            //  Current time
+            var vTime = video.currentTime;
+            document.getElementById("curTime").textContent = vTime.toFixed(1);
+        }, false);
+        //  paused and playing events to control buttons
+        video.addEventListener("pause", function() {
+            document.getElementById("play").textContent = ">";
+        }, false);
+
+        video.addEventListener("playing", function() {
+            document.getElementById("play").textContent = "||";
+        }, false);
+
+        video.addEventListener("volumechange", function() {
+            if (video.muted) {
+                // if muted, show mute image
+                document.getElementById("mute").innerHTML = "<img alt='Muted' src='vol1.png' />";
+            } else {
+                // if not muted, show not muted image
+                document.getElementById("mute").innerHTML = "<img alt='Not Muted' src='vol2.png' />";
+            }
+        }, false);
+        //  Download and playback status events.
+
+    } else {
+        errMessage("HTML5 Video is required for this example");
+        // end of runtime
+    }
+    //  display an error message
+    function errMessage(msg) {
+        // displays an error message for 5 seconds then clears it
+        document.getElementById("errorMsg").textContent = msg;
+        setTimeout("document.getElementById('errorMsg').textContent=''", 5000);
+    }
+
+</script>
+

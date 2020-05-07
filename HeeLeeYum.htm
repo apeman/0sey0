@@ -1,0 +1,191 @@
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" id="viewport" name="viewport">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="noimageindex, noarchive" name="robots">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro|Noto+sans|Nanum+Gothic" rel="stylesheet">
+    <meta content="yes" name="mobile-web-app-capable">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        body {
+            font-family: "Source sans pro", -apple-system, BlinkMacSystemFont, 'Segoe UI', Ubuntu, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            outline: none;
+            box-sizing: border-box;
+            text-decoration: none;
+            vertical-align: baseline;
+            list-style-type: none;
+            border: 0;
+            outline: 0;
+        }
+
+    </style>
+</head>
+
+<div>
+    <form class="formcon " id="search-form" name="search-form" onsubmit="return search()">
+       <div class="logoicon">
+          <svg class="logoogle clrful" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img" stroke="#000000">
+           <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+           <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+           <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
+        </svg>
+       </div>
+       <div class="d3 " style="width:100%; ">
+          <input class="form-control search-field " type="search" id="query" style="width:100%;" placeholder="#tags, people, shopping">
+          <button class="search-btn " type="submit" id="search-btn" name="search-btn" value="">
+             <svg xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24" class="srchicon ">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+             </svg>
+          </button>
+       </div>
+       <div class="logoicon">
+          <svg class="logoogle clrful" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img" stroke="#000000">
+             <line x1="4" y1="21" x2="4" y2="14" stroke="#4285F4"></line>
+                   <line x1="4" y1="10" x2="4" y2="3" stroke="#4285F4"></line>
+                   <line x1="12" y1="21" x2="12" y2="12" stroke="#4285F4"></line>
+                   <line x1="12" y1="8" x2="12" y2="3" stroke="#4285F4"></line>
+                   <line x1="20" y1="21" x2="20" y2="16" stroke="#4285F4"></line>
+                   <line x1="20" y1="12" x2="20" y2="3" stroke="#4285F4"></line>
+                   <line x1="1" y1="14" x2="7" y2="14" stroke="#34A853"></line>
+                   <line x1="9" y1="8" x2="15" y2="8" stroke="#34A853"></line>
+                   <line x1="17" y1="16" x2="23" y2="16" stroke="#34A853"></line>
+          </svg>
+       </div>
+    </form>
+    <div class="R6-Wf">
+       <div class="x1MBX"><a class="simlink" href="/main">Main</a>
+       </div>
+       <div class="x1MBX"><a class="simlink" href="/photos">Photos</a>
+       </div>
+       <div class="x1MBX"><a class="simlink" href="/videos">Videos</a>
+       </div>
+       <div class="x1MBX"><a class="simlink" href="/songs">Audio</a>
+       </div>
+       <div class="x1MBX"><a class="simlink" href="/events">Events</a>
+       </div>
+    </div>
+ </div>
+ <style>
+.formcon {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.4rem 0.1rem;
+    align-items: center;
+    height: 4rem;
+}
+.logoicon {
+    display: flex;
+    align-items: center;
+}
+.clrful {
+    stroke-width: 1.6;
+    border-radius: 5px;
+    fill: none;
+    padding: 3px;
+    box-shadow: none;
+    display: block;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: .2s ease;
+}
+
+.logoogle {
+    border-radius: 5px;
+    padding: 0px;
+    stroke: #4f4f4f;
+    height: 2.6rem;
+    width: 2.6rem;
+}
+.d3 {
+    display: flex;
+    /* background: #efefef; */
+    border: 2px solid #686868;
+    margin: 0rem 0.2rem;
+    max-width: 650px;
+    align-items: center;
+    border-radius: 40px;
+}
+.search-field {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 0px;
+    outline: none;
+    background: transparent;
+    color: #000;
+    font-size: 1.1rem;
+    height: 2.8rem;
+    padding: 0rem 1.2rem;
+}
+.search-btn {
+    background-color: #ffffff00;
+    border: none;
+    outline: none;
+    border-radius: 0 6px 6px 0;
+    display: flex;
+    align-items: center;
+    height: 2.8rem;
+    padding: 0rem 0.6rem;
+}
+.srchicon {
+    stroke: #5f5f5f;
+    fill: none;
+    stroke-width: 2;
+    width: 2rem;
+    height: 2rem;
+}
+ </style>
+ <style>
+     
+     .R6-Wf::-webkit-scrollbar {
+         width: 0px;
+         height: 0px;
+         }
+         .R6-Wf::-webkit-scrollbar-thumb {
+         background-color: #555;
+         }
+.R6-Wf {
+    flex-wrap: nowrap;
+    display: flex;
+    background: #ffffff;
+    overflow-x: visible;
+    overflow-y: hidden;
+    width: 100%;
+    border: 1px solid rgb(237, 237, 237);
+    margin: 0;
+}
+.R6-Wf> :first-child {
+    margin-left: 0;
+    border-bottom: 2px solid #686868;
+}
+
+.x1MBX {
+    overflow: hidden;
+    text-align: center;
+    flex-basis: 90px;
+    background-blend-mode: lighten;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    flex-shrink: 0;
+    max-width: 250px;
+}
+.simlink {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    transition: background-color .15s ease-in-out;
+    text-decoration: none;
+    padding: 4px;
+    color: #686868;
+}
+ </style>
